@@ -11,6 +11,7 @@ target 'GitHubUndabot' do
   pod 'RxCocoa', '~> 4.3'
   pod 'RxDataSources', '~> 3.1'
   pod 'PureLayout', '~> 3.1'
+  pod 'SwiftyJSON', '~> 4.2'
 
   target 'GitHubUndabotTests' do
     inherit! :search_paths

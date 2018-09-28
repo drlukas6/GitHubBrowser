@@ -13,6 +13,10 @@
 		2F690F81215E7ECB00C14815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7F215E7ECB00C14815 /* LaunchScreen.storyboard */; };
 		2F690F8C215E7ECC00C14815 /* GitHubUndabotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F690F8B215E7ECC00C14815 /* GitHubUndabotTests.swift */; };
 		2F690F9D215E85DA00C14815 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F690F9C215E85DA00C14815 /* QueryView.swift */; };
+		2F887A65215E879D00F309C0 /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A64215E879D00F309C0 /* ViewProtocol.swift */; };
+		2F887A67215E8C8D00F309C0 /* QueryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A66215E8C8D00F309C0 /* QueryViewModel.swift */; };
+		2F887A6B215E8FAA00F309C0 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A6A215E8FAA00F309C0 /* QueryViewController.swift */; };
+		2F887A6D215E908700F309C0 /* ApiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A6C215E908700F309C0 /* ApiController.swift */; };
 		3FD88E150E552D2A32947423 /* Pods_GitHubUndabotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +42,10 @@
 		2F690F8B215E7ECC00C14815 /* GitHubUndabotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUndabotTests.swift; sourceTree = "<group>"; };
 		2F690F8D215E7ECC00C14815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F690F9C215E85DA00C14815 /* QueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
+		2F887A64215E879D00F309C0 /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
+		2F887A66215E8C8D00F309C0 /* QueryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryViewModel.swift; sourceTree = "<group>"; };
+		2F887A6A215E8FAA00F309C0 /* QueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
+		2F887A6C215E908700F309C0 /* ApiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiController.swift; sourceTree = "<group>"; };
 		646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90084108945F2C253CF13EDD /* Pods-GitHubUndabot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot.debug.xcconfig"; sourceTree = "<group>"; };
 		B0FC559127157CDF50642918 /* Pods_GitHubUndabot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +95,8 @@
 		2F690F75215E7EC700C14815 /* GitHubUndabot */ = {
 			isa = PBXGroup;
 			children = (
-				2F690F9A215E845300C14815 /* Controllers */,
+				2F887A63215E86E600F309C0 /* Controllers */,
+				2F690F9A215E845300C14815 /* ViewControllers */,
 				2F690F99215E844400C14815 /* Views */,
 				2F690F98215E843900C14815 /* ViewModels */,
 				2F690F97215E843100C14815 /* Models */,
@@ -126,6 +135,7 @@
 		2F690F98215E843900C14815 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				2F887A66215E8C8D00F309C0 /* QueryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -134,13 +144,23 @@
 			isa = PBXGroup;
 			children = (
 				2F690F9C215E85DA00C14815 /* QueryView.swift */,
+				2F887A64215E879D00F309C0 /* ViewProtocol.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2F690F9A215E845300C14815 /* Controllers */ = {
+		2F690F9A215E845300C14815 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F887A6A215E8FAA00F309C0 /* QueryViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2F887A63215E86E600F309C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F887A6C215E908700F309C0 /* ApiController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -278,6 +298,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -288,6 +309,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -346,7 +368,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F690F77215E7EC700C14815 /* AppDelegate.swift in Sources */,
+				2F887A67215E8C8D00F309C0 /* QueryViewModel.swift in Sources */,
+				2F887A6D215E908700F309C0 /* ApiController.swift in Sources */,
+				2F887A65215E879D00F309C0 /* ViewProtocol.swift in Sources */,
 				2F690F9D215E85DA00C14815 /* QueryView.swift in Sources */,
+				2F887A6B215E8FAA00F309C0 /* QueryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +530,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22AZG63582;
 				INFOPLIST_FILE = GitHubUndabot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -523,6 +550,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22AZG63582;
 				INFOPLIST_FILE = GitHubUndabot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
