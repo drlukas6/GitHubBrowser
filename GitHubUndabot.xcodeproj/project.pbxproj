@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052CEDB5A1AC2498061117E9 /* Pods_GitHubUndabot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FC559127157CDF50642918 /* Pods_GitHubUndabot.framework */; };
 		2F690F77215E7EC700C14815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F690F76215E7EC700C14815 /* AppDelegate.swift */; };
 		2F690F79215E7EC700C14815 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F690F78215E7EC700C14815 /* ViewController.swift */; };
 		2F690F7C215E7EC700C14815 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7A215E7EC700C14815 /* Main.storyboard */; };
 		2F690F7E215E7ECB00C14815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7D215E7ECB00C14815 /* Assets.xcassets */; };
 		2F690F81215E7ECB00C14815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7F215E7ECB00C14815 /* LaunchScreen.storyboard */; };
 		2F690F8C215E7ECC00C14815 /* GitHubUndabotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F690F8B215E7ECC00C14815 /* GitHubUndabotTests.swift */; };
+		3FD88E150E552D2A32947423 /* Pods_GitHubUndabotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03489CDD2521537CDC2AAC7A /* Pods-GitHubUndabot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabot.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot.release.xcconfig"; sourceTree = "<group>"; };
+		2F3E3608EADF4819E9C62928 /* Pods-GitHubUndabotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabotTests/Pods-GitHubUndabotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F690F73215E7EC700C14815 /* GitHubUndabot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUndabot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F690F76215E7EC700C14815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F690F78215E7EC700C14815 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +40,10 @@
 		2F690F87215E7ECC00C14815 /* GitHubUndabotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUndabotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F690F8B215E7ECC00C14815 /* GitHubUndabotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUndabotTests.swift; sourceTree = "<group>"; };
 		2F690F8D215E7ECC00C14815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90084108945F2C253CF13EDD /* Pods-GitHubUndabot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot.debug.xcconfig"; sourceTree = "<group>"; };
+		B0FC559127157CDF50642918 /* Pods_GitHubUndabot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C33F0B04793562D317FC4E35 /* Pods-GitHubUndabotTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabotTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabotTests/Pods-GitHubUndabotTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				052CEDB5A1AC2498061117E9 /* Pods_GitHubUndabot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD88E150E552D2A32947423 /* Pods_GitHubUndabotTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +72,8 @@
 				2F690F75215E7EC700C14815 /* GitHubUndabot */,
 				2F690F8A215E7ECC00C14815 /* GitHubUndabotTests */,
 				2F690F74215E7EC700C14815 /* Products */,
+				7E7F8BC0F3205B9DA7785F10 /* Pods */,
+				A549569B32A350F503D37B1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +108,26 @@
 			path = GitHubUndabotTests;
 			sourceTree = "<group>";
 		};
+		7E7F8BC0F3205B9DA7785F10 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90084108945F2C253CF13EDD /* Pods-GitHubUndabot.debug.xcconfig */,
+				03489CDD2521537CDC2AAC7A /* Pods-GitHubUndabot.release.xcconfig */,
+				2F3E3608EADF4819E9C62928 /* Pods-GitHubUndabotTests.debug.xcconfig */,
+				C33F0B04793562D317FC4E35 /* Pods-GitHubUndabotTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A549569B32A350F503D37B1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0FC559127157CDF50642918 /* Pods_GitHubUndabot.framework */,
+				646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F690F90215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubUndabot" */;
 			buildPhases = (
+				84CB883DE6408AAEF5C81988 /* [CP] Check Pods Manifest.lock */,
 				2F690F6F215E7EC700C14815 /* Sources */,
 				2F690F70215E7EC700C14815 /* Frameworks */,
 				2F690F71215E7EC700C14815 /* Resources */,
+				0B076892CCDEBB6221E9CB68 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -120,6 +154,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F690F93215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubUndabotTests" */;
 			buildPhases = (
+				A228E66259CDE85C80CDB22D /* [CP] Check Pods Manifest.lock */,
 				2F690F83215E7ECC00C14815 /* Sources */,
 				2F690F84215E7ECC00C14815 /* Frameworks */,
 				2F690F85215E7ECC00C14815 /* Resources */,
@@ -191,6 +226,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B076892CCDEBB6221E9CB68 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84CB883DE6408AAEF5C81988 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitHubUndabot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A228E66259CDE85C80CDB22D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GitHubUndabotTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2F690F6F215E7EC700C14815 /* Sources */ = {
@@ -358,6 +468,7 @@
 		};
 		2F690F91215E7ECC00C14815 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90084108945F2C253CF13EDD /* Pods-GitHubUndabot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -376,6 +487,7 @@
 		};
 		2F690F92215E7ECC00C14815 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03489CDD2521537CDC2AAC7A /* Pods-GitHubUndabot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,6 +506,7 @@
 		};
 		2F690F94215E7ECC00C14815 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3E3608EADF4819E9C62928 /* Pods-GitHubUndabotTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -415,6 +528,7 @@
 		};
 		2F690F95215E7ECC00C14815 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C33F0B04793562D317FC4E35 /* Pods-GitHubUndabotTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
