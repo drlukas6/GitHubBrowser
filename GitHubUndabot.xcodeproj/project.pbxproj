@@ -12,6 +12,7 @@
 		2F690F7E215E7ECB00C14815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7D215E7ECB00C14815 /* Assets.xcassets */; };
 		2F690F81215E7ECB00C14815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7F215E7ECB00C14815 /* LaunchScreen.storyboard */; };
 		2F690F8C215E7ECC00C14815 /* GitHubUndabotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F690F8B215E7ECC00C14815 /* GitHubUndabotTests.swift */; };
+		2F690F9D215E85DA00C14815 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F690F9C215E85DA00C14815 /* QueryView.swift */; };
 		3FD88E150E552D2A32947423 /* Pods_GitHubUndabotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		2F690F87215E7ECC00C14815 /* GitHubUndabotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUndabotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F690F8B215E7ECC00C14815 /* GitHubUndabotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUndabotTests.swift; sourceTree = "<group>"; };
 		2F690F8D215E7ECC00C14815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F690F9C215E85DA00C14815 /* QueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
 		646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90084108945F2C253CF13EDD /* Pods-GitHubUndabot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot.debug.xcconfig"; sourceTree = "<group>"; };
 		B0FC559127157CDF50642918 /* Pods_GitHubUndabot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 		2F690F99215E844400C14815 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F690F9C215E85DA00C14815 /* QueryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -280,6 +284,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -341,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F690F77215E7EC700C14815 /* AppDelegate.swift in Sources */,
+				2F690F9D215E85DA00C14815 /* QueryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
