@@ -15,7 +15,10 @@ protocol ViewType where Self: UIView {
     func setupSubviews()
 }
 
+
 enum ViewProperties {
+    static let largeInset: CGFloat = 16.0
     static let smallInset: CGFloat = 8.0
     static let noInset: CGFloat = 0.0
+    static let defaultCornerRadius: CGFloat = 15.0
 }

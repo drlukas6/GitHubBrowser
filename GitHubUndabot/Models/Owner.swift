@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import SwiftyJSON
+
+class Owner {
+    var avatar: URL?
+    var login: String
+    
+    private enum OwnerKeys {
+        static let avatar = "avatar_url"
+        static let login = "login"
+    }
+    
+    init(JSON: JSON) {
+        self.avatar = JSON[OwnerKeys.avatar].url ?? nil
+        self.login = JSON[OwnerKeys.login].string ?? ""
+    }
+}

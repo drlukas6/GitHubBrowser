@@ -9,9 +9,10 @@ target 'GitHubUndabot' do
 
   pod 'RxSwift', '~> 4.3'
   pod 'RxCocoa', '~> 4.3'
-  pod 'RxDataSources', '~> 3.1'
+  pod 'Action', '~> 3.8'
   pod 'PureLayout', '~> 3.1'
   pod 'SwiftyJSON', '~> 4.2'
+  pod 'Kingfisher', '~> 4.10'
 
   target 'GitHubUndabotTests' do
     inherit! :search_paths

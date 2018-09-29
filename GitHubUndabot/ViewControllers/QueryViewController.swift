@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class QueryViewController: UIViewController {
+class QueryViewController: UIViewController, BindableType {
+    var viewModel: QueryViewModel!
+    
+    func bindViewModel() {
+//
+    }
+    
     private var queryView: QueryView!
 
     override func viewDidLoad() {
