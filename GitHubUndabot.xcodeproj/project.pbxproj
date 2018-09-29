@@ -22,7 +22,6 @@
 		2F887A76215F791100F309C0 /* QueryResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A75215F791100F309C0 /* QueryResultTableViewCell.swift */; };
 		2F887A78215F7F2100F309C0 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A77215F7F2100F309C0 /* BindableType.swift */; };
 		2F887A7B215F7FAC00F309C0 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A7A215F7FAC00F309C0 /* Scene.swift */; };
-		2FCF7DCC215FFDDC00B23FE2 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCF7DCB215FFDDC00B23FE2 /* ViewModelType.swift */; };
 		3FD88E150E552D2A32947423 /* Pods_GitHubUndabotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +56,6 @@
 		2F887A75215F791100F309C0 /* QueryResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResultTableViewCell.swift; sourceTree = "<group>"; };
 		2F887A77215F7F2100F309C0 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		2F887A7A215F7FAC00F309C0 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		2FCF7DCB215FFDDC00B23FE2 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90084108945F2C253CF13EDD /* Pods-GitHubUndabot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot.debug.xcconfig"; sourceTree = "<group>"; };
 		B0FC559127157CDF50642918 /* Pods_GitHubUndabot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				2F887A66215E8C8D00F309C0 /* QueryViewModel.swift */,
-				2FCF7DCB215FFDDC00B23FE2 /* ViewModelType.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -409,7 +406,6 @@
 				2F887A6D215E908700F309C0 /* ApiController.swift in Sources */,
 				2F887A65215E879D00F309C0 /* ViewProtocol.swift in Sources */,
 				2F887A76215F791100F309C0 /* QueryResultTableViewCell.swift in Sources */,
-				2FCF7DCC215FFDDC00B23FE2 /* ViewModelType.swift in Sources */,
 				2F690F9D215E85DA00C14815 /* QueryView.swift in Sources */,
 				2F887A6B215E8FAA00F309C0 /* QueryViewController.swift in Sources */,
 				2F887A7B215F7FAC00F309C0 /* Scene.swift in Sources */,

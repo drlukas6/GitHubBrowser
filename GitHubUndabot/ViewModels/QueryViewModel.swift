@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import RxSwift
+import Action
+import SwiftyJSON
 
 struct QueryViewModel {
+    var queryResults: Variable<[Repository]> = Variable([])
     
+    func search(query: String) {
+        ApiController.shared.searchRepositories(for: query)
+        .bind(to: queryResults)
+    }
 }

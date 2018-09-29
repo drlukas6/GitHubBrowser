@@ -17,7 +17,7 @@ extension Scene {
     func viewController() -> UIViewController {
         switch self {
         case .queryScene(let viewModel):
-            let viewController = QueryViewController()
+            let viewController = QueryViewController(viewModel: viewModel)
             return viewController
         }
     }

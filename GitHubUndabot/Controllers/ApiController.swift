@@ -13,6 +13,8 @@ import SwiftyJSON
 
 class ApiController {
     static let shared = ApiController()
+    private let disposeBag = DisposeBag()
+    
     var rootEndpoint: URL {
         guard let endpoint = URL(string: "https://api.github.com") else {
             fatalError("Root Endpoint is invalid. App Cannot function without it.")
@@ -29,8 +31,14 @@ class ApiController {
         static let POST = "POST"
     }
     
-    func searchRepositories(for inquiry: String) -> Observable<JSON> {
-        return performRequest(urlMethod: UrlMethod.GET, pathComponent: PathComponent.repositories, params: [("q", inquiry)])
+    func searchRepositories(for inquiry: String) -> Observable<[Repository]> {
+        return performRequest(urlMethod: UrlMethod.GET,
+                       pathComponent: PathComponent.repositories,
+                       params: [("q", inquiry)])
+            .flatMap { json -> Observable<[Repository]> in
+                guard let unparsedResult = json["items"].array else { return Observable.empty() }
+                return Observable.just(unparsedResult.map(Repository.init))
+            }
     }
     
     private func performRequest(urlMethod: String, pathComponent: String, params: [(String, String)]) -> Observable<JSON> {

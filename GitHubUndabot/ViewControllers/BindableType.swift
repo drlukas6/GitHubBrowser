@@ -17,11 +17,5 @@ protocol BindableType {
     func bindViewModel()
 }
 
-extension BindableType {
-    mutating func bindViewModel(to viewModel: ViewModelType) {
-        self.viewModel = viewModel
-        bindViewModel()
-    }
-}
 
 
