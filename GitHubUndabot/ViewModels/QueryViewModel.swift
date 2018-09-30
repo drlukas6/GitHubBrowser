@@ -11,11 +11,18 @@ import RxSwift
 import Action
 import SwiftyJSON
 
-struct QueryViewModel {
+struct QueryViewModel: Router {
+    private let disposeBag = DisposeBag()
     var queryResults: Variable<[Repository]> = Variable([])
     
-    func search(query: String) {
-        ApiController.shared.searchRepositories(for: query)
+    func search(query: String, sortType: String) {
+        ApiController.shared.searchRepositories(for: query, sortType: sortType)
         .bind(to: queryResults)
+        .disposed(by: disposeBag)
+    }
+    
+    func transitionTo(scene: Scene, context: UIViewController) {
+        context.navigationController?.pushViewController(scene.viewController(), animated: true)
     }
 }
+

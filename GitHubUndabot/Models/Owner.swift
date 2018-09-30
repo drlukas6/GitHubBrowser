@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class Owner {
-    var avatar: URL?
+    var avatar: URL
     var login: String
     
     private enum OwnerKeys {
@@ -19,7 +19,7 @@ class Owner {
     }
     
     init(JSON: JSON) {
-        self.avatar = JSON[OwnerKeys.avatar].url ?? nil
+        self.avatar = JSON[OwnerKeys.avatar].url!
         self.login = JSON[OwnerKeys.login].string ?? ""
     }
 }

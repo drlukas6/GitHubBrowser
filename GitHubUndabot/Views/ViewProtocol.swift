@@ -16,9 +16,22 @@ protocol ViewType where Self: UIView {
 }
 
 
-enum ViewProperties {
-    static let largeInset: CGFloat = 16.0
-    static let smallInset: CGFloat = 8.0
-    static let noInset: CGFloat = 0.0
-    static let defaultCornerRadius: CGFloat = 15.0
+enum ViewProperty {
+    enum inset {
+        static let large: CGFloat = 16.0
+        static let small: CGFloat = 8.0
+        static let continous: CGFloat = 2.0
+        static let none: CGFloat = 0.0
+    }
+    enum size {
+        static let smallImage: CGSize = CGSize(width: 80.0, height: 80.0)
+        static let imageCorner: CGFloat = 40.0
+        static let defaultCorner: CGFloat = 15.0
+        static let smallFont: CGFloat = 12.0
+        static let largeFont: CGFloat = 20.0
+        static let borderWidth: CGFloat = 2.0
+    }
+    enum color {
+        static let undabotBlue: UIColor = UIColor(red: 0.255, green: 0.596, blue: 0.784, alpha: 1.0)
+    }
 }

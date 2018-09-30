@@ -16,6 +16,10 @@ class Repository {
     var forks: Int
     var issues: Int
     var description: String
+    var updated: Date
+    var created: Date
+    var language: String
+    var license: String
     
     private enum RepoKeys {
         static let name = "name"
@@ -24,6 +28,10 @@ class Repository {
         static let issues = "open_issues"
         static let description = "description"
         static let owner = "owner"
+        static let updated = "updated_at"
+        static let created = "created_at"
+        static let language = "language"
+        static let license = "license"
     }
     
     init(JSON: JSON) {
@@ -33,5 +41,13 @@ class Repository {
         self.issues = JSON[RepoKeys.issues].int ?? 0
         self.description = JSON[RepoKeys.description].string ?? ""
         self.owner = Owner(JSON: JSON[RepoKeys.owner])
+        self.language = JSON[RepoKeys.language].string ?? ""
+        self.license = JSON[RepoKeys.license][RepoKeys.name].string ?? ""
+        let lastUpdated = JSON[RepoKeys.updated].string ?? ""
+        let createdAt = JSON[RepoKeys.created].string ?? ""
+        let formatter = ISO8601DateFormatter()
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        self.updated = formatter.date(from: lastUpdated) ?? Date()
+        self.created = formatter.date(from: createdAt) ?? Date()
     }
 }

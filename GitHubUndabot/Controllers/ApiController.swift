@@ -31,10 +31,15 @@ class ApiController {
         static let POST = "POST"
     }
     
-    func searchRepositories(for inquiry: String) -> Observable<[Repository]> {
+    enum Parameter  {
+        static let query = "q"
+        static let sort = "sort"
+    }
+    
+    func searchRepositories(for inquiry: String, sortType: String) -> Observable<[Repository]> {
         return performRequest(urlMethod: UrlMethod.GET,
                        pathComponent: PathComponent.repositories,
-                       params: [("q", inquiry)])
+                       params: [(Parameter.query, inquiry), (Parameter.sort, sortType)])
             .flatMap { json -> Observable<[Repository]> in
                 guard let unparsedResult = json["items"].array else { return Observable.empty() }
                 return Observable.just(unparsedResult.map(Repository.init))

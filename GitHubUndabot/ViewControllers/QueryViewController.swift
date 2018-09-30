@@ -16,12 +16,13 @@ class QueryViewController: UIViewController, BindableType {
     private var queryView: QueryView!
     private var disposeBag: DisposeBag!
     
-    private var results: Variable<[Repository]>!
-
+    private enum PropertyKeys {
+        static let queryCellIdentifier = "queryCellIdentifier"
+    }
+    
     convenience init(viewModel: QueryViewModel) {
         self.init()
         self.viewModel = viewModel
-        self.results = Variable([])
         queryView = QueryView(frame: .zero)
         self.disposeBag = DisposeBag()
     }
@@ -32,30 +33,71 @@ class QueryViewController: UIViewController, BindableType {
         bindViewModel()
     }
     
-    func initialSetup() {
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    private func initialSetup() {
         self.view.backgroundColor = .white
         self.view.addSubview(queryView)
         queryView.autoPinEdgesToSuperviewEdges()
-        
-        queryView.resultsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "def")
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        queryView.resultsTableView.register(QueryResultTableViewCell.self,
+                                            forCellReuseIdentifier: PropertyKeys.queryCellIdentifier)
+        queryView.resultsTableView.rowHeight = 200
+        queryView.resultsTableView.separatorStyle = .none
     }
 
     func bindViewModel() {
-        queryView.searchBar.rx.text.orEmpty
+        let query = queryView.searchBar.rx.text.orEmpty
             .debounce(0.5, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .filter {!$0.isEmpty}
-            .subscribe(onNext: { query in
-                self.viewModel.search(query: query)
-            })
+        
+        let sortType = queryView.sortType.rx.selectedSegmentIndex.asObservable()
+            .map { index -> String in
+                switch index {
+                case 0:
+                    return "stars"
+                case 1:
+                    return "forks"
+                default:
+                    return "updated"
+                }
+            }
+        
+        Observable.combineLatest(query, sortType) { (queryParam, sortParam) in
+            self.viewModel.search(query: queryParam, sortType: sortParam)
+        }.subscribe().disposed(by: disposeBag)
+        
+
         
         viewModel.queryResults.asObservable()
+            .share(replay: 1, scope: .whileConnected)
             .bind(to: queryView.resultsTableView.rx.items) {
                 (tableView, row, element) in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "def") as! UITableViewCell
-                cell.textLabel?.text = element.name
+                guard let cell  = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.queryCellIdentifier) as? QueryResultTableViewCell else {
+                    fatalError()
+                }
+                cell.configureCell(with: element)
                 return cell
-        }
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.queryResults.asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+                self?.queryView.searchBar.endEditing(true)
+            })
+            .disposed(by: disposeBag)
+        
     }
 }
 

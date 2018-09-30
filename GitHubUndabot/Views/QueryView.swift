@@ -13,6 +13,7 @@ import PureLayout
 class QueryView: UIView, ViewType {
     var resultsTableView: UITableView!
     var searchBar: UISearchBar!
+    var sortType: UISegmentedControl!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,26 +32,37 @@ class QueryView: UIView, ViewType {
     internal func initializeSubviews() {
         self.resultsTableView = UITableView()
         self.searchBar = UISearchBar()
+        self.sortType = UISegmentedControl(items: ["STARS", "FORKS", "UPDATED"])
     }
     
     internal func addSubviews() {
         self.addSubview(resultsTableView)
         self.addSubview(searchBar)
+        self.addSubview(sortType)
     }
     
     internal func setupSubviews() {
-        searchBar.autoPinEdgesToSuperviewSafeArea(with: UIEdgeInsets(top: ViewProperties.noInset,
-                                                                     left: ViewProperties.noInset,
-                                                                     bottom: ViewProperties.noInset,
-                                                                     right: ViewProperties.noInset),
+        searchBar.autoPinEdgesToSuperviewSafeArea(with: UIEdgeInsets(top: ViewProperty.inset.none,
+                                                                     left: ViewProperty.inset.none,
+                                                                     bottom: ViewProperty.inset.none,
+                                                                     right: ViewProperty.inset.none),
                                                   excludingEdge: .bottom)
+        searchBar.barTintColor = ViewProperty.color.undabotBlue
         
-        resultsTableView.autoPinEdgesToSuperviewSafeArea(with: UIEdgeInsets(top: ViewProperties.noInset,
-                                                                            left: ViewProperties.noInset,
-                                                                            bottom: ViewProperties.noInset,
-                                                                            right: ViewProperties.noInset),
+        sortType.autoPinEdge(.top, to: .bottom, of: searchBar, withOffset: ViewProperty.inset.continous)
+        sortType.autoPinEdge(toSuperviewEdge: .leading, withInset: ViewProperty.inset.large)
+        sortType.autoPinEdge(toSuperviewEdge: .trailing, withInset: ViewProperty.inset.large)
+        sortType.tintColor = ViewProperty.color.undabotBlue
+        sortType.selectedSegmentIndex = 0
+        
+        
+        
+        resultsTableView.autoPinEdgesToSuperviewSafeArea(with: UIEdgeInsets(top: ViewProperty.inset.none,
+                                                                            left: ViewProperty.inset.none,
+                                                                            bottom: ViewProperty.inset.none,
+                                                                            right: ViewProperty.inset.none),
                                                          excludingEdge: .top)
-        resultsTableView.autoPinEdge(.top, to: .bottom, of: searchBar)
+        resultsTableView.autoPinEdge(.top, to: .bottom, of: sortType)
     }
     
 }
