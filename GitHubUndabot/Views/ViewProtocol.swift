@@ -25,7 +25,9 @@ enum ViewProperty {
     }
     enum size {
         static let smallImage: CGSize = CGSize(width: 80.0, height: 80.0)
-        static let imageCorner: CGFloat = 40.0
+        static let mediumImage: CGSize = CGSize(width: 120.0, height: 120.0)
+        static let smallImageCorner: CGFloat = 40.0
+        static let mediumImageCorner: CGFloat = 60.0
         static let defaultCorner: CGFloat = 15.0
         static let smallFont: CGFloat = 12.0
         static let largeFont: CGFloat = 20.0

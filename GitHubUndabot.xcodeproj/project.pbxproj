@@ -10,6 +10,7 @@
 		052CEDB5A1AC2498061117E9 /* Pods_GitHubUndabot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FC559127157CDF50642918 /* Pods_GitHubUndabot.framework */; };
 		2F1650D62161295F00C8DBA2 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650D52161295F00C8DBA2 /* RepositoryViewModel.swift */; };
 		2F1650D821612B7A00C8DBA2 /* RepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650D721612B7A00C8DBA2 /* RepositoryView.swift */; };
+		2F1650DA216138DA00C8DBA2 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */; };
 		2F690F77215E7EC700C14815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F690F76215E7EC700C14815 /* AppDelegate.swift */; };
 		2F690F7E215E7ECB00C14815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7D215E7ECB00C14815 /* Assets.xcassets */; };
 		2F690F81215E7ECB00C14815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7F215E7ECB00C14815 /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 		03489CDD2521537CDC2AAC7A /* Pods-GitHubUndabot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabot.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot.release.xcconfig"; sourceTree = "<group>"; };
 		2F1650D52161295F00C8DBA2 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		2F1650D721612B7A00C8DBA2 /* RepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryView.swift; sourceTree = "<group>"; };
+		2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		2F3E3608EADF4819E9C62928 /* Pods-GitHubUndabotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabotTests/Pods-GitHubUndabotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F690F73215E7EC700C14815 /* GitHubUndabot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUndabot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F690F76215E7EC700C14815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				2F887A6A215E8FAA00F309C0 /* QueryViewController.swift */,
 				2F887A77215F7F2100F309C0 /* BindableType.swift */,
+				2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				2F887A65215E879D00F309C0 /* ViewProtocol.swift in Sources */,
 				2F887A76215F791100F309C0 /* QueryResultTableViewCell.swift in Sources */,
 				2F1650D62161295F00C8DBA2 /* RepositoryViewModel.swift in Sources */,
+				2F1650DA216138DA00C8DBA2 /* RepositoryViewController.swift in Sources */,
 				2F690F9D215E85DA00C14815 /* QueryView.swift in Sources */,
 				2F887A6B215E8FAA00F309C0 /* QueryViewController.swift in Sources */,
 				2F887A7B215F7FAC00F309C0 /* Scene.swift in Sources */,

@@ -77,8 +77,6 @@ class QueryViewController: UIViewController, BindableType {
             self.viewModel.search(query: queryParam, sortType: sortParam)
         }.subscribe().disposed(by: disposeBag)
         
-
-        
         viewModel.queryResults.asObservable()
             .share(replay: 1, scope: .whileConnected)
             .bind(to: queryView.resultsTableView.rx.items) {
@@ -95,6 +93,16 @@ class QueryViewController: UIViewController, BindableType {
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 self?.queryView.searchBar.endEditing(true)
+            })
+            .disposed(by: disposeBag)
+        
+        queryView.resultsTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                guard let strongSelf = self else { return }
+                strongSelf.queryView.resultsTableView.deselectRow(at: indexPath, animated: true)
+                let repositoryViewModel = RepositoryViewModel(repository: strongSelf.viewModel.queryResults.value[indexPath.row])
+                let repositoryScene = Scene.repositoryScene(repositoryViewModel)
+                strongSelf.viewModel.transitionTo(scene: repositoryScene, context: strongSelf)
             })
             .disposed(by: disposeBag)
         

@@ -8,10 +8,10 @@
 
 import Foundation
 import RxSwift
-import Action
 import SwiftyJSON
 
 struct QueryViewModel: Router {
+    
     private let disposeBag = DisposeBag()
     var queryResults: Variable<[Repository]> = Variable([])
     

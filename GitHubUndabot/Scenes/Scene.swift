@@ -8,7 +8,8 @@
 
 import Foundation
 import UIKit
-
+import RxSwift
+import Action
 enum Scene {
     case queryScene(QueryViewModel)
     case repositoryScene(RepositoryViewModel)
@@ -27,7 +28,7 @@ extension Scene {
             navigationController.navigationBar.tintColor = ViewProperty.color.undabotBlue
             return navigationController
         case .repositoryScene(let viewModel):
-            return UIViewController()
+            return RepositoryViewController(viewModel: viewModel)
         }
     }
 }

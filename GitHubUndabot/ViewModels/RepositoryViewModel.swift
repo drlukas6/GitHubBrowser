@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import RxSwift
+import Action
 
-struct RepositoryViewModel {
+struct RepositoryViewModel: Router {
+    let repository: Repository
     
+    func transitionTo(scene: Scene, context: UIViewController) {
+        
+    }
 }

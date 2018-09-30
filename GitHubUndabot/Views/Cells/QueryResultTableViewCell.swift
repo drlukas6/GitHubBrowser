@@ -84,7 +84,7 @@ class QueryResultTableViewCell: UITableViewCell, ViewType {
         avatarImage.layer.masksToBounds = true
         avatarImage.layer.borderColor = UIColor.white.cgColor
         avatarImage.layer.borderWidth = ViewProperty.size.borderWidth
-        avatarImage.layer.cornerRadius = ViewProperty.size.imageCorner
+        avatarImage.layer.cornerRadius = ViewProperty.size.smallImageCorner
         
         repoName.autoPinEdge(.top, to: .top, of: avatarImage)
         repoName.autoPinEdge(.leading,
