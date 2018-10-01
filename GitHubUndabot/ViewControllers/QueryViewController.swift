@@ -84,7 +84,11 @@ class QueryViewController: UIViewController, BindableType {
                 guard let cell  = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.queryCellIdentifier) as? QueryResultTableViewCell else {
                     fatalError()
                 }
-                cell.configureCell(with: element)
+                let queryResultViewModel = QueryResultCellViewModel(repository:
+                    Variable<Repository>(self.viewModel.queryResults.value[row]))
+                cell.viewModel = queryResultViewModel
+                cell.bindViewModel()
+                
                 return cell
             }
             .disposed(by: disposeBag)

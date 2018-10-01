@@ -9,8 +9,12 @@
 import Foundation
 import PureLayout
 import Kingfisher
+import RxSwift
+import RxGesture
 
-class QueryResultTableViewCell: UITableViewCell, ViewType {
+class QueryResultTableViewCell: UITableViewCell, ViewType, BindableType {
+    internal var viewModel: QueryResultCellViewModel!
+    
     private var containerView: UIView!
     private var avatarImage: UIImageView!
     private var repoName: UILabel!
@@ -20,6 +24,9 @@ class QueryResultTableViewCell: UITableViewCell, ViewType {
     private var repoDescription: UILabel!
     private var author: UILabel!
     private var lastUpdated: UILabel!
+    
+    private var disposeBag = DisposeBag()
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -170,17 +177,27 @@ class QueryResultTableViewCell: UITableViewCell, ViewType {
         
     }
     
-    func configureCell(with repo: Repository) {
-        self.avatarImage.kf.setImage(with: repo.owner.avatar)
+    private func configureCell(with repo: Repository) {
+        self.avatarImage.kf.setImage(with: repo.ownerAvatar)
         self.repoName.text = repo.name
         self.repoDescription.text = repo.description
         self.noWatchers.text = "Watchers: \(repo.watchers)"
         self.noForks.text = "Forks: \(repo.forks)"
         self.noIssues.text = "Issues: \(repo.issues)"
-        self.author.text = "Author: \(repo.owner.login)"
+        self.author.text = "Author: \(repo.ownerLogin)"
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
         self.lastUpdated.text = "Updated: \(formatter.string(from: repo.updated))"
+    }
+    
+    func bindViewModel() {
+        configureCell(with: viewModel.repository.value)
+        
+        self.avatarImage.rx.gesture(.tap())
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                print("Tapped only image mate")
+                })
     }
 }

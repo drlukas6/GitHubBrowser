@@ -11,7 +11,8 @@ import SwiftyJSON
 
 class Repository {
     var name: String
-    var owner: Owner
+    var ownerAvatar: URL
+    var ownerLogin: String
     var watchers: Int
     var forks: Int
     var issues: Int
@@ -28,6 +29,8 @@ class Repository {
         static let issues = "open_issues"
         static let description = "description"
         static let owner = "owner"
+        static let ownerAvatar = "avatar_url"
+        static let login = "login"
         static let updated = "updated_at"
         static let created = "created_at"
         static let language = "language"
@@ -40,7 +43,8 @@ class Repository {
         self.forks = JSON[RepoKeys.forks].int ?? 0
         self.issues = JSON[RepoKeys.issues].int ?? 0
         self.description = JSON[RepoKeys.description].string ?? ""
-        self.owner = Owner(JSON: JSON[RepoKeys.owner])
+        self.ownerAvatar = JSON[RepoKeys.owner][RepoKeys.ownerAvatar].url!
+        self.ownerLogin = JSON[RepoKeys.owner][RepoKeys.login].string ?? ""
         self.language = JSON[RepoKeys.language].string ?? ""
         self.license = JSON[RepoKeys.license][RepoKeys.name].string ?? ""
         let lastUpdated = JSON[RepoKeys.updated].string ?? ""

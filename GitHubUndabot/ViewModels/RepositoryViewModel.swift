@@ -10,10 +10,8 @@ import Foundation
 import RxSwift
 import Action
 
-struct RepositoryViewModel: Router {
+struct RepositoryViewModel {
     let repository: Repository
     
-    func transitionTo(scene: Scene, context: UIViewController) {
-        
-    }
+
 }

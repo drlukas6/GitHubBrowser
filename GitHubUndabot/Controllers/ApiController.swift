@@ -24,6 +24,7 @@ class ApiController {
     
     enum PathComponent {
         static let repositories = "search/repositories"
+        static let users = "/users"
     }
     
     enum UrlMethod {
@@ -34,6 +35,25 @@ class ApiController {
     enum Parameter  {
         static let query = "q"
         static let sort = "sort"
+    }
+    
+    enum UserField {
+        static let followers = "followers"
+        static let subscriptions = "subscriptions"
+        static let repos = "repos_url"
+        static let type = "type"
+        static let score = "score"
+    }
+    
+    func getUser(for username: String) -> Observable<RepositoryOwner> {
+        return performRequest(urlMethod: UrlMethod.GET, pathComponent: "\(PathComponent.users)/\(username)", params: [])
+            .flatMap { json -> Observable<RepositoryOwner> in
+//                Assures the user exists
+                guard json["login"].string != nil else {
+                    return Observable.empty()
+                }
+                return Observable.just(RepositoryOwner(JSON: json))
+            }
     }
     
     func searchRepositories(for inquiry: String, sortType: String) -> Observable<[Repository]> {

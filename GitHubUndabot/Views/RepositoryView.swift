@@ -178,8 +178,8 @@ class RepositoryView: UIView, ViewType {
         formatter.dateStyle = .short
         formatter.timeStyle = .short
         self.repoDescription.text = repo.description
-        self.avatarImage.kf.setImage(with: repo.owner.avatar)
-        self.authorName.text = repo.owner.login
+        self.avatarImage.kf.setImage(with: repo.ownerAvatar)
+        self.authorName.text = repo.ownerLogin
         self.language.text = "LANGUAGE: \(repo.language)"
         self.noIssues.text = "ISSUES: \(repo.issues)"
         self.noWatchers.text = "WATCHERS: \(repo.watchers)"
