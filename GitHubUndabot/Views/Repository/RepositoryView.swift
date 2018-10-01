@@ -9,6 +9,8 @@
 import Foundation
 import PureLayout
 import UIKit
+import RxSwift
+import RxGesture
 
 class RepositoryView: UIView, ViewType {
     private var repoDescription: UILabel!
@@ -26,6 +28,9 @@ class RepositoryView: UIView, ViewType {
     private var created: UILabel!
     private var license: UILabel!
     private var viewOnWeb: UIButton!
+    
+    private var viewModel: RepositoryViewModel!
+    private var disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -187,5 +192,16 @@ class RepositoryView: UIView, ViewType {
         self.updated.text = "UPDATED: \(formatter.string(from: repo.updated))"
         self.created.text = "CREATED: \(formatter.string(from: repo.created))"
         self.license.text = "LICENSE: \(repo.license)"
+    }
+    
+    func bind(with viewModel: RepositoryViewModel) {
+        
+        self.authorView.rx.gesture(.tap())
+            .throttle(0.5, scheduler: MainScheduler.instance)
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                self.viewModel.getOwner()
+            })
+            .disposed(by: self.disposeBag)
     }
 }

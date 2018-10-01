@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxGesture
 
 class RepositoryViewController: UIViewController, BindableType {
     internal var viewModel: RepositoryViewModel!
     private var repositoryView: RepositoryView!
+    private var disposeBag = DisposeBag()
 
     convenience init(viewModel: RepositoryViewModel) {
         self.init()
@@ -32,6 +35,27 @@ class RepositoryViewController: UIViewController, BindableType {
     }
     
     func bindViewModel() {
+        repositoryView
+            .authorView
+            .rx
+            .gesture(.tap())
+            .throttle(0.5, scheduler: MainScheduler.instance)
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                self.viewModel.getOwner()
+            })
+            .disposed(by: disposeBag)
         
+        self.viewModel.repositoryOwner
+            .asObservable()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { repositoryOwner in
+                let userViewModel = UserViewModel(repositoryOwner: repositoryOwner)
+                let userScene = Scene.userScene(userViewModel)
+                self.viewModel
+                    .transitionTo(scene: userScene, context: self)
+            })
+            .disposed(by: disposeBag)
     }
 }
+

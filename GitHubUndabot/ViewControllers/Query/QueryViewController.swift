@@ -17,6 +17,7 @@ class QueryViewController: UIViewController, BindableType {
     private var queryView: QueryView!
     private var disposeBag: DisposeBag!
     private var dataSource: RxTableViewSectionedAnimatedDataSource<RepositorySection>!
+    
     private enum PropertyKeys {
         static let queryCellIdentifier = "queryCellIdentifier"
     }
@@ -58,7 +59,11 @@ class QueryViewController: UIViewController, BindableType {
     }
 
     func bindViewModel() {
-        let query = queryView.searchBar.rx.text.orEmpty
+        let query = queryView
+            .searchBar
+            .rx
+            .text
+            .orEmpty
             .debounce(0.5, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .filter {!$0.isEmpty}
@@ -75,16 +80,21 @@ class QueryViewController: UIViewController, BindableType {
                 }
             }
         
-        Observable.combineLatest(query, sortType) { (queryParam, sortParam) in
+        Observable
+            .combineLatest(query, sortType) { (queryParam, sortParam) in
             self.viewModel.search(query: queryParam, sortType: sortParam)
-        }.subscribe().disposed(by: disposeBag)
-        
+            }
+            .subscribe()
+            .disposed(by: disposeBag)
         
         viewModel.sectionedResults
             .bind(to: queryView.resultsTableView.rx.items(dataSource: self.dataSource))
             .disposed(by: disposeBag)
     
-        queryView.resultsTableView.rx.itemSelected
+        queryView
+            .resultsTableView
+            .rx
+            .itemSelected
             .do(onNext: { [unowned self] indexPath in
                 self.queryView.resultsTableView.deselectRow(at: indexPath, animated: true)
             })
@@ -98,7 +108,9 @@ class QueryViewController: UIViewController, BindableType {
                 })
             .disposed(by: disposeBag)
         
-        viewModel.queryResults.asObservable()
+        viewModel
+            .queryResults
+            .asObservable()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
                 self?.queryView.searchBar.endEditing(true)
@@ -115,7 +127,21 @@ class QueryViewController: UIViewController, BindableType {
                     let viewModel = QueryResultCellViewModel(repository: Variable<Repository>(item))
                     cell.setCell(with: viewModel)
                     
-                    cell.viewModel.repositoryOwner.asObservable()
+                    cell
+                        .avatarImage
+                        .rx
+                        .tapGesture()
+                        .throttle(0.5, scheduler: MainScheduler.instance)
+                        .when(.recognized)
+                        .subscribe(onNext: { _ in
+                            cell.viewModel.getOwner()
+                        })
+                        .disposed(by: strongSelf.disposeBag)
+                    
+                    cell
+                        .viewModel
+                        .repositoryOwner
+                        .asObservable()
                         .observeOn(MainScheduler.instance)
                         .subscribe(onNext: { owner in
                             let userViewModel = UserViewModel(repositoryOwner: owner)
