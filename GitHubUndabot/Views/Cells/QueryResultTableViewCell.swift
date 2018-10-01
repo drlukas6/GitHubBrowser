@@ -9,24 +9,29 @@
 import Foundation
 import PureLayout
 import Kingfisher
-import RxSwift
-import RxGesture
 
-class QueryResultTableViewCell: UITableViewCell, ViewType, BindableType {
-    internal var viewModel: QueryResultCellViewModel!
+
+class QueryResultTableViewCell: UITableViewCell, ViewType {
+    var viewModel: QueryResultCellViewModel!
     
-    private var containerView: UIView!
-    private var avatarImage: UIImageView!
-    private var repoName: UILabel!
-    private var noWatchers: UILabel!
-    private var noForks: UILabel!
-    private var noIssues: UILabel!
-    private var repoDescription: UILabel!
-    private var author: UILabel!
-    private var lastUpdated: UILabel!
     
-    private var disposeBag = DisposeBag()
+    var containerView: UIView!
+    var avatarImage: UIImageView!
+    var repoName: UILabel!
+    var noWatchers: UILabel!
+    var noForks: UILabel!
+    var noIssues: UILabel!
+    var repoDescription: UILabel!
+    var author: UILabel!
+    var lastUpdated: UILabel!
     
+    convenience init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, viewModel: QueryResultCellViewModel) {
+        self.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.viewModel = viewModel
+        initializeSubviews()
+        addSubviews()
+        setupSubviews()
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -177,7 +182,7 @@ class QueryResultTableViewCell: UITableViewCell, ViewType, BindableType {
         
     }
     
-    private func configureCell(with repo: Repository) {
+    func configureCell(with repo: Repository) {
         self.avatarImage.kf.setImage(with: repo.ownerAvatar)
         self.repoName.text = repo.name
         self.repoDescription.text = repo.description
@@ -191,13 +196,6 @@ class QueryResultTableViewCell: UITableViewCell, ViewType, BindableType {
         self.lastUpdated.text = "Updated: \(formatter.string(from: repo.updated))"
     }
     
-    func bindViewModel() {
-        configureCell(with: viewModel.repository.value)
-        
-        self.avatarImage.rx.gesture(.tap())
-            .when(.recognized)
-            .subscribe(onNext: { _ in
-                print("Tapped only image mate")
-                })
-    }
+
+    
 }

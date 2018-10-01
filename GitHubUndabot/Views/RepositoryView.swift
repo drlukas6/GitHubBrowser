@@ -136,7 +136,7 @@ class RepositoryView: UIView, ViewType {
                                         withInset: ViewProperty.inset.small)
         statisticsStackView.axis = .vertical
         statisticsStackView.alignment = .center
-        statisticsStackView.spacing = 5.0
+        statisticsStackView.spacing = ViewProperty.size.defaultStackViewSpacing
         
         language.font = UIFont.boldSystemFont(ofSize: ViewProperty.size.largeFont)
         language.textColor = ViewProperty.color.undabotBlue

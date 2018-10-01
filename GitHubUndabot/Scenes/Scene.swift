@@ -34,8 +34,8 @@ extension Scene {
             return navigationController
         case .repositoryScene(let viewModel):
             return RepositoryViewController(viewModel: viewModel)
-        case .userScene(let userViewModel):
-            return UIViewController()
+        case .userScene(let viewModel):
+            return UserViewController(viewModel: viewModel)
         }
     }
 }

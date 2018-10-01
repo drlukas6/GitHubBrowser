@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 import RxSwift
 import RxCocoa
+import RxGesture
 
 class QueryViewController: UIViewController, BindableType {
     internal var viewModel: QueryViewModel!
@@ -84,11 +85,25 @@ class QueryViewController: UIViewController, BindableType {
                 guard let cell  = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.queryCellIdentifier) as? QueryResultTableViewCell else {
                     fatalError()
                 }
-                let queryResultViewModel = QueryResultCellViewModel(repository:
-                    Variable<Repository>(self.viewModel.queryResults.value[row]))
-                cell.viewModel = queryResultViewModel
-                cell.bindViewModel()
+                cell.viewModel = self.viewModel.viewModelForCell(at: row)
+                cell.configureCell(with: cell.viewModel.repository.value)
+
+                cell.avatarImage.rx.tapGesture()
+                    .throttle(0.5, scheduler: MainScheduler.instance)
+                    .when(.recognized)
+                    .subscribe(onNext: { _ in
+                        cell.viewModel.getUser()
+                    })
+                    .disposed(by: self.disposeBag)
                 
+                cell.viewModel.repositoryOwner.asObservable()
+                    .observeOn(MainScheduler.instance)
+                    .subscribe(onNext: { owner in
+                        let userViewModel = UserViewModel(repositoryOwner: owner)
+                        let userScene = Scene.userScene(userViewModel)
+                        cell.viewModel.transitionTo(scene: userScene, context: self)
+                    })
+                    .disposed(by: self.disposeBag)
                 return cell
             }
             .disposed(by: disposeBag)
@@ -107,6 +122,7 @@ class QueryViewController: UIViewController, BindableType {
                 let repositoryViewModel = RepositoryViewModel(repository: strongSelf.viewModel.queryResults.value[indexPath.row])
                 let repositoryScene = Scene.repositoryScene(repositoryViewModel)
                 strongSelf.viewModel.transitionTo(scene: repositoryScene, context: strongSelf)
+                
             })
             .disposed(by: disposeBag)
         

@@ -37,6 +37,10 @@ struct QueryViewModel: Router {
                 .ignoreElements()
     }
     
+    func viewModelForCell(at index: Int) -> QueryResultCellViewModel {
+        return QueryResultCellViewModel(repository: Variable<Repository>(self.queryResults.value[index]))
+    }
+    
     
 }
 
