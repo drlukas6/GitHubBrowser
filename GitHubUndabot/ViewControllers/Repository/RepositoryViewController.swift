@@ -9,9 +9,10 @@
 import UIKit
 import RxSwift
 import RxGesture
+import Action
 
 class RepositoryViewController: UIViewController, BindableType {
-    internal var viewModel: RepositoryViewModel!
+    var viewModel: RepositoryViewModel!
     private var repositoryView: RepositoryView!
     private var disposeBag = DisposeBag()
 
@@ -56,6 +57,8 @@ class RepositoryViewController: UIViewController, BindableType {
                     .transitionTo(scene: userScene, context: self)
             })
             .disposed(by: disposeBag)
+        
+        repositoryView.viewOnWeb.rx.action = self.viewModel.openInSafari(from: self)
     }
 }
 

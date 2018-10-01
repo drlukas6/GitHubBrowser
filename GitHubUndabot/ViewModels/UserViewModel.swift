@@ -7,9 +7,20 @@
 //
 
 import Foundation
+import RxSwift
+import Action
+import SafariServices
 
 struct UserViewModel {
     let repositoryOwner: RepositoryOwner
     
-    
+    func openInSafari(from viewController: UIViewController) -> CocoaAction {
+        return CocoaAction { _ in
+            let safariViewController = SFSafariViewController(url: self.repositoryOwner.ownerUrl)
+            safariViewController.preferredControlTintColor = .white
+            safariViewController.preferredBarTintColor = ViewProperty.color.undabotBlue
+            viewController.present(safariViewController, animated: true, completion: nil)
+            return Observable.empty()
+        }
+    }
 }

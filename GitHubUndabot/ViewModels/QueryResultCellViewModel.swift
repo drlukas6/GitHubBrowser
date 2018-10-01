@@ -32,9 +32,9 @@ struct QueryResultCellViewModel: Router {
             .ignoreElements()
     }
     
-    func getUser() {
+    func getOwner() {
         ApiController.shared.getUser(for: repository.value.ownerLogin)
-            .subscribe(onNext: {self.repositoryOwner.onNext($0)})
+            .subscribe(onNext: { self.repositoryOwner.onNext($0) })
             .disposed(by: disposeBag)
     }
     

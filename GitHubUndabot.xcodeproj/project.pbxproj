@@ -12,6 +12,9 @@
 		2F081B4A21621DCB0021AF7E /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F081B4921621DCB0021AF7E /* UserView.swift */; };
 		2F081B4C216229140021AF7E /* RepositoryOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F081B4B216229140021AF7E /* RepositoryOwner.swift */; };
 		2F081B4E216239780021AF7E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F081B4D216239780021AF7E /* UserViewController.swift */; };
+		2F081B532162B2A00021AF7E /* QueryView+ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F081B522162B2A00021AF7E /* QueryView+ViewType.swift */; };
+		2F081B552162B2FA0021AF7E /* RepositoryView+ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F081B542162B2FA0021AF7E /* RepositoryView+ViewType.swift */; };
+		2F081B572162B3810021AF7E /* UserView+ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F081B562162B3810021AF7E /* UserView+ViewType.swift */; };
 		2F1650D62161295F00C8DBA2 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650D52161295F00C8DBA2 /* RepositoryViewModel.swift */; };
 		2F1650D821612B7A00C8DBA2 /* RepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650D721612B7A00C8DBA2 /* RepositoryView.swift */; };
 		2F1650DA216138DA00C8DBA2 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */; };
@@ -50,6 +53,9 @@
 		2F081B4921621DCB0021AF7E /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		2F081B4B216229140021AF7E /* RepositoryOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryOwner.swift; sourceTree = "<group>"; };
 		2F081B4D216239780021AF7E /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		2F081B522162B2A00021AF7E /* QueryView+ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryView+ViewType.swift"; sourceTree = "<group>"; };
+		2F081B542162B2FA0021AF7E /* RepositoryView+ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RepositoryView+ViewType.swift"; sourceTree = "<group>"; };
+		2F081B562162B3810021AF7E /* UserView+ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserView+ViewType.swift"; sourceTree = "<group>"; };
 		2F1650D52161295F00C8DBA2 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		2F1650D721612B7A00C8DBA2 /* RepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryView.swift; sourceTree = "<group>"; };
 		2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +106,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F081B4F2162B26F0021AF7E /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				2F690F9C215E85DA00C14815 /* QueryView.swift */,
+				2F081B522162B2A00021AF7E /* QueryView+ViewType.swift */,
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
+		2F081B502162B2780021AF7E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				2F1650D721612B7A00C8DBA2 /* RepositoryView.swift */,
+				2F081B542162B2FA0021AF7E /* RepositoryView+ViewType.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		2F081B512162B2810021AF7E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2F081B4921621DCB0021AF7E /* UserView.swift */,
+				2F081B562162B3810021AF7E /* UserView+ViewType.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		2F081B582162B8450021AF7E /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				2F887A6A215E8FAA00F309C0 /* QueryViewController.swift */,
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
+		2F081B592162B8520021AF7E /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2F081B4D216239780021AF7E /* UserViewController.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		2F081B5A2162B85E0021AF7E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		2F690F6A215E7EC600C14815 = {
 			isa = PBXGroup;
 			children = (
@@ -177,11 +234,11 @@
 		2F690F99215E844400C14815 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F081B512162B2810021AF7E /* User */,
+				2F081B502162B2780021AF7E /* Repository */,
+				2F081B4F2162B26F0021AF7E /* Query */,
 				2F887A74215F78F300F309C0 /* Cells */,
-				2F690F9C215E85DA00C14815 /* QueryView.swift */,
-				2F1650D721612B7A00C8DBA2 /* RepositoryView.swift */,
 				2F887A64215E879D00F309C0 /* ViewProtocol.swift */,
-				2F081B4921621DCB0021AF7E /* UserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,10 +246,10 @@
 		2F690F9A215E845300C14815 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				2F887A6A215E8FAA00F309C0 /* QueryViewController.swift */,
+				2F081B5A2162B85E0021AF7E /* Repository */,
+				2F081B592162B8520021AF7E /* User */,
+				2F081B582162B8450021AF7E /* Query */,
 				2F887A77215F7F2100F309C0 /* BindableType.swift */,
-				2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */,
-				2F081B4D216239780021AF7E /* UserViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -432,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F887A71215EAA4F00F309C0 /* Repository.swift in Sources */,
+				2F081B572162B3810021AF7E /* UserView+ViewType.swift in Sources */,
 				2F081B4E216239780021AF7E /* UserViewController.swift in Sources */,
 				2F1650D821612B7A00C8DBA2 /* RepositoryView.swift in Sources */,
 				2F1650E02162054500C8DBA2 /* SceneCoordinator.swift in Sources */,
@@ -450,6 +508,8 @@
 				2F887A6B215E8FAA00F309C0 /* QueryViewController.swift in Sources */,
 				2F1650DC2162022700C8DBA2 /* UserViewModel.swift in Sources */,
 				2F887A7B215F7FAC00F309C0 /* Scene.swift in Sources */,
+				2F081B552162B2FA0021AF7E /* RepositoryView+ViewType.swift in Sources */,
+				2F081B532162B2A00021AF7E /* QueryView+ViewType.swift in Sources */,
 				2F081B4C216229140021AF7E /* RepositoryOwner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

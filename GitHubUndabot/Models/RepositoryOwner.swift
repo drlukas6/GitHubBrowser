@@ -18,6 +18,7 @@ class RepositoryOwner {
     var bio: String
     var followers: Int
     var following: Int
+    var ownerUrl: URL
     
     private enum OwnerKeys {
         static let avatar = "avatar_url"
@@ -28,6 +29,7 @@ class RepositoryOwner {
         static let bio = "bio"
         static let followers = "followers"
         static let following = "following"
+        static let ownerUrl = "html_url"
     }
     
     init(JSON: JSON) {
@@ -39,5 +41,6 @@ class RepositoryOwner {
         self.bio = JSON[OwnerKeys.bio].string ?? ""
         self.followers = JSON[OwnerKeys.followers].int ?? 0
         self.following = JSON[OwnerKeys.following].int ?? 0
+        self.ownerUrl = JSON[OwnerKeys.ownerUrl].url!
     }
 }

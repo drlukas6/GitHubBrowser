@@ -13,7 +13,7 @@ import RxCocoa
 import RxDataSources
 
 class QueryViewController: UIViewController, BindableType {
-    internal var viewModel: QueryViewModel!
+    var viewModel: QueryViewModel!
     private var queryView: QueryView!
     private var disposeBag: DisposeBag!
     private var dataSource: RxTableViewSectionedAnimatedDataSource<RepositorySection>!

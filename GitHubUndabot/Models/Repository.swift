@@ -22,6 +22,7 @@ class Repository {
     var created: Date
     var language: String
     var license: String
+    var repoURL: URL
     
     private enum RepoKeys {
         static let name = "name"
@@ -36,6 +37,7 @@ class Repository {
         static let created = "created_at"
         static let language = "language"
         static let license = "license"
+        static let repoURL = "html_url"
     }
     
     init(JSON: JSON) {
@@ -48,6 +50,7 @@ class Repository {
         self.ownerLogin = JSON[RepoKeys.owner][RepoKeys.login].string ?? ""
         self.language = JSON[RepoKeys.language].string ?? ""
         self.license = JSON[RepoKeys.license][RepoKeys.name].string ?? ""
+        self.repoURL = JSON[RepoKeys.repoURL].url!
         let lastUpdated = JSON[RepoKeys.updated].string ?? ""
         let createdAt = JSON[RepoKeys.created].string ?? ""
         let formatter = ISO8601DateFormatter()

@@ -13,18 +13,18 @@ import RxGesture
 import RxSwift
 
 class QueryResultTableViewCell: UITableViewCell, ViewType {
+    var containerView: UIView!
+    var avatarImage: UIImageView!
+    var repoName: UILabel!
+    var noWatchers: UILabel!
+    var noForks: UILabel!
+    var noIssues: UILabel!
+    var repoDescription: UILabel!
+    var author: UILabel!
+    var lastUpdated: UILabel!
+    
     var viewModel: QueryResultCellViewModel!
     var disposeBag = DisposeBag()
-    
-    private var containerView: UIView!
-    private var avatarImage: UIImageView!
-    private var repoName: UILabel!
-    private var noWatchers: UILabel!
-    private var noForks: UILabel!
-    private var noIssues: UILabel!
-    private var repoDescription: UILabel!
-    private var author: UILabel!
-    private var lastUpdated: UILabel!
     
     convenience init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, viewModel: QueryResultCellViewModel) {
         self.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -200,14 +200,6 @@ class QueryResultTableViewCell: UITableViewCell, ViewType {
     func setCell(with viewModel: QueryResultCellViewModel) {
         self.viewModel = viewModel
         configureCell(with: self.viewModel.repository.value)
-        
-        avatarImage.rx.tapGesture()
-            .throttle(0.5, scheduler: MainScheduler.instance)
-            .when(.recognized)
-            .subscribe(onNext: { _ in
-                self.viewModel.getUser()
-            })
-            .disposed(by: self.disposeBag)
     }
     
     override func prepareForReuse() {

@@ -8,9 +8,11 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import Action
 
 class UserViewController: UIViewController, BindableType {
-    internal var viewModel: UserViewModel!
+    var viewModel: UserViewModel!
     private var userView: UserView!
     
     convenience init(viewModel: UserViewModel) {
@@ -33,6 +35,6 @@ class UserViewController: UIViewController, BindableType {
     }
     
     func bindViewModel() {
-        
+        userView.viewOnWeb.rx.action = self.viewModel.openInSafari(from: self)
     }
 }

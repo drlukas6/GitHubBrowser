@@ -15,6 +15,14 @@ protocol ViewType where Self: UIView {
     func setupSubviews()
 }
 
+extension ViewType {
+    func designView() {
+        initializeSubviews()
+        addSubviews()
+        setupSubviews()
+    }
+}
+
 
 enum ViewProperty {
     enum inset {
@@ -35,6 +43,7 @@ enum ViewProperty {
         static let smallFont: CGFloat = 12.0
         static let largeFont: CGFloat = 20.0
         static let borderWidth: CGFloat = 2.0
+        static let buttonHeight: CGFloat = 40.0
     }
     enum color {
         static let undabotBlue: UIColor = UIColor(red: 0.255, green: 0.596, blue: 0.784, alpha: 1.0)
