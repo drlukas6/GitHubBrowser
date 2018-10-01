@@ -9,12 +9,21 @@
 import Foundation
 import RxSwift
 import SwiftyJSON
-import Action
+import RxDataSources
+
+typealias RepositorySection = AnimatableSectionModel<String, Repository>
 
 struct QueryViewModel: Router {
     
     private let disposeBag = DisposeBag()
     var queryResults: Variable<[Repository]> = Variable([])
+    
+    var sectionedResults: Observable<[RepositorySection]> {
+        return queryResults.asObservable()
+            .map { results in
+                return [RepositorySection(model: "Search Results", items: results)]
+            }
+    }
     
     func search(query: String, sortType: String) {
         ApiController.shared.searchRepositories(for: query, sortType: sortType)

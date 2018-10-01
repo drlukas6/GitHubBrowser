@@ -10,13 +10,13 @@ import UIKit
 import SwiftyJSON
 import RxSwift
 import RxCocoa
-import RxGesture
+import RxDataSources
 
 class QueryViewController: UIViewController, BindableType {
     internal var viewModel: QueryViewModel!
     private var queryView: QueryView!
     private var disposeBag: DisposeBag!
-    
+    private var dataSource: RxTableViewSectionedAnimatedDataSource<RepositorySection>!
     private enum PropertyKeys {
         static let queryCellIdentifier = "queryCellIdentifier"
     }
@@ -31,6 +31,7 @@ class QueryViewController: UIViewController, BindableType {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+        configureDataSource()
         bindViewModel()
     }
     
@@ -78,34 +79,23 @@ class QueryViewController: UIViewController, BindableType {
             self.viewModel.search(query: queryParam, sortType: sortParam)
         }.subscribe().disposed(by: disposeBag)
         
-        viewModel.queryResults.asObservable()
-            .share(replay: 1, scope: .whileConnected)
-            .bind(to: queryView.resultsTableView.rx.items) {
-                (tableView, row, element) in
-                guard let cell  = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.queryCellIdentifier) as? QueryResultTableViewCell else {
-                    fatalError()
-                }
-                cell.viewModel = self.viewModel.viewModelForCell(at: row)
-                cell.configureCell(with: cell.viewModel.repository.value)
-
-                cell.avatarImage.rx.tapGesture()
-                    .throttle(0.5, scheduler: MainScheduler.instance)
-                    .when(.recognized)
-                    .subscribe(onNext: { _ in
-                        cell.viewModel.getUser()
-                    })
-                    .disposed(by: self.disposeBag)
-                
-                cell.viewModel.repositoryOwner.asObservable()
-                    .observeOn(MainScheduler.instance)
-                    .subscribe(onNext: { owner in
-                        let userViewModel = UserViewModel(repositoryOwner: owner)
-                        let userScene = Scene.userScene(userViewModel)
-                        cell.viewModel.transitionTo(scene: userScene, context: self)
-                    })
-                    .disposed(by: self.disposeBag)
-                return cell
+        
+        viewModel.sectionedResults
+            .bind(to: queryView.resultsTableView.rx.items(dataSource: self.dataSource))
+            .disposed(by: disposeBag)
+    
+        queryView.resultsTableView.rx.itemSelected
+            .do(onNext: { [unowned self] indexPath in
+                self.queryView.resultsTableView.deselectRow(at: indexPath, animated: true)
+            })
+            .map { [unowned self] indexPath in
+                try! self.dataSource.model(at: indexPath) as! Repository
             }
+            .subscribe(onNext: { [unowned self] repository in
+                let repositoryViewModel = RepositoryViewModel(repository: repository)
+                let repositoryScene = Scene.repositoryScene(repositoryViewModel)
+                self.viewModel.transitionTo(scene: repositoryScene, context: self)
+                })
             .disposed(by: disposeBag)
         
         viewModel.queryResults.asObservable()
@@ -114,18 +104,32 @@ class QueryViewController: UIViewController, BindableType {
                 self?.queryView.searchBar.endEditing(true)
             })
             .disposed(by: disposeBag)
-        
-        queryView.resultsTableView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
-                guard let strongSelf = self else { return }
-                strongSelf.queryView.resultsTableView.deselectRow(at: indexPath, animated: true)
-                let repositoryViewModel = RepositoryViewModel(repository: strongSelf.viewModel.queryResults.value[indexPath.row])
-                let repositoryScene = Scene.repositoryScene(repositoryViewModel)
-                strongSelf.viewModel.transitionTo(scene: repositoryScene, context: strongSelf)
-                
-            })
-            .disposed(by: disposeBag)
-        
+    }
+    
+    fileprivate func configureDataSource() {
+        dataSource = RxTableViewSectionedAnimatedDataSource<RepositorySection>(
+            configureCell: {
+                [weak self] dataSource, tableView, indexPath, item in
+                let cell  = tableView.dequeueReusableCell(withIdentifier: PropertyKeys.queryCellIdentifier) as! QueryResultTableViewCell
+                if let strongSelf = self {
+                    let viewModel = QueryResultCellViewModel(repository: Variable<Repository>(item))
+                    cell.setCell(with: viewModel)
+                    
+                    cell.viewModel.repositoryOwner.asObservable()
+                        .observeOn(MainScheduler.instance)
+                        .subscribe(onNext: { owner in
+                            let userViewModel = UserViewModel(repositoryOwner: owner)
+                            let userScene = Scene.userScene(userViewModel)
+                            cell.viewModel.transitionTo(scene: userScene, context: strongSelf)
+                        })
+                        .disposed(by: strongSelf.disposeBag)
+                }
+                return cell
+            },
+            titleForHeaderInSection: { dataSource, index in
+                dataSource.sectionModels[index].model
+            }
+        )
     }
 }
 

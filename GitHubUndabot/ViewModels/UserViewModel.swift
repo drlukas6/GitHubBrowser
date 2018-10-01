@@ -10,4 +10,6 @@ import Foundation
 
 struct UserViewModel {
     let repositoryOwner: RepositoryOwner
+    
+    
 }

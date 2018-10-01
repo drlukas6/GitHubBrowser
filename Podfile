@@ -11,6 +11,7 @@ target 'GitHubUndabot' do
   pod 'RxCocoa', '~> 4.3'
   pod 'Action', '~> 3.8'
   pod 'RxGesture', '~> 2.0'
+  pod 'RxDataSources', '~> 3.1'
   pod 'PureLayout', '~> 3.1'
   pod 'SwiftyJSON', '~> 4.2'
   pod 'Kingfisher', '~> 4.10'

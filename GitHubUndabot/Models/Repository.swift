@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftyJSON
+import RxDataSources
 
 class Repository {
     var name: String
@@ -54,4 +55,18 @@ class Repository {
         self.updated = formatter.date(from: lastUpdated) ?? Date()
         self.created = formatter.date(from: createdAt) ?? Date()
     }
+}
+
+extension Repository: IdentifiableType {
+    var identity: String {
+        return "\(self.name)-\(self.created)"
+    }
+}
+
+extension Repository: Equatable {
+    static func == (lhs: Repository, rhs: Repository) -> Bool {
+        return lhs.created == rhs.created && lhs.name == rhs.name
+    }
+    
+    
 }
