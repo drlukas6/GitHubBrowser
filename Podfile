@@ -15,6 +15,7 @@ target 'GitHubUndabot' do
   pod 'PureLayout', '~> 3.1'
   pod 'SwiftyJSON', '~> 4.2'
   pod 'Kingfisher', '~> 4.10'
+  pod 'OAuthSwift', '~> 1.2'
 
   target 'GitHubUndabotTests' do
     inherit! :search_paths

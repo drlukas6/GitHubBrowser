@@ -19,8 +19,6 @@
 		2F1650D821612B7A00C8DBA2 /* RepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650D721612B7A00C8DBA2 /* RepositoryView.swift */; };
 		2F1650DA216138DA00C8DBA2 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */; };
 		2F1650DC2162022700C8DBA2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650DB2162022700C8DBA2 /* UserViewModel.swift */; };
-		2F1650DE2162044B00C8DBA2 /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650DD2162044B00C8DBA2 /* SceneCoordinatorType.swift */; };
-		2F1650E02162054500C8DBA2 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1650DF2162054500C8DBA2 /* SceneCoordinator.swift */; };
 		2F690F77215E7EC700C14815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F690F76215E7EC700C14815 /* AppDelegate.swift */; };
 		2F690F7E215E7ECB00C14815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7D215E7ECB00C14815 /* Assets.xcassets */; };
 		2F690F81215E7ECB00C14815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F690F7F215E7ECB00C14815 /* LaunchScreen.storyboard */; };
@@ -34,6 +32,11 @@
 		2F887A76215F791100F309C0 /* QueryResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A75215F791100F309C0 /* QueryResultTableViewCell.swift */; };
 		2F887A78215F7F2100F309C0 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A77215F7F2100F309C0 /* BindableType.swift */; };
 		2F887A7B215F7FAC00F309C0 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F887A7A215F7FAC00F309C0 /* Scene.swift */; };
+		2FA1994621635FA0002B2883 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1994521635FA0002B2883 /* LoginView.swift */; };
+		2FA199482163604A002B2883 /* LoginView+ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA199472163604A002B2883 /* LoginView+ViewType.swift */; };
+		2FA1994B21636298002B2883 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1994A21636298002B2883 /* LoginViewController.swift */; };
+		2FA1994D216362CA002B2883 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1994C216362CA002B2883 /* LoginViewModel.swift */; };
+		2FA1994F2163638B002B2883 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1994E2163638B002B2883 /* Router.swift */; };
 		3FD88E150E552D2A32947423 /* Pods_GitHubUndabotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,8 +63,6 @@
 		2F1650D721612B7A00C8DBA2 /* RepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryView.swift; sourceTree = "<group>"; };
 		2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		2F1650DB2162022700C8DBA2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		2F1650DD2162044B00C8DBA2 /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinatorType.swift; sourceTree = "<group>"; };
-		2F1650DF2162054500C8DBA2 /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		2F3E3608EADF4819E9C62928 /* Pods-GitHubUndabotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabotTests/Pods-GitHubUndabotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2F690F73215E7EC700C14815 /* GitHubUndabot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUndabot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F690F76215E7EC700C14815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +81,11 @@
 		2F887A75215F791100F309C0 /* QueryResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResultTableViewCell.swift; sourceTree = "<group>"; };
 		2F887A77215F7F2100F309C0 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		2F887A7A215F7FAC00F309C0 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		2FA1994521635FA0002B2883 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2FA199472163604A002B2883 /* LoginView+ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView+ViewType.swift"; sourceTree = "<group>"; };
+		2FA1994A21636298002B2883 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2FA1994C216362CA002B2883 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		2FA1994E2163638B002B2883 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		646EEC3749D5E1CC4F51E452 /* Pods_GitHubUndabotTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabotTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90084108945F2C253CF13EDD /* Pods-GitHubUndabot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabot/Pods-GitHubUndabot.debug.xcconfig"; sourceTree = "<group>"; };
 		B0FC559127157CDF50642918 /* Pods_GitHubUndabot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUndabot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +233,7 @@
 				2F1650D52161295F00C8DBA2 /* RepositoryViewModel.swift */,
 				2F1650DB2162022700C8DBA2 /* UserViewModel.swift */,
 				2F081B4721621B110021AF7E /* QueryResultCellViewModel.swift */,
+				2FA1994C216362CA002B2883 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -234,6 +241,7 @@
 		2F690F99215E844400C14815 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2FA1994421635F7D002B2883 /* Login */,
 				2F081B512162B2810021AF7E /* User */,
 				2F081B502162B2780021AF7E /* Repository */,
 				2F081B4F2162B26F0021AF7E /* Query */,
@@ -246,6 +254,7 @@
 		2F690F9A215E845300C14815 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2FA199492163628A002B2883 /* Login */,
 				2F081B5A2162B85E0021AF7E /* Repository */,
 				2F081B592162B8520021AF7E /* User */,
 				2F081B582162B8450021AF7E /* Query */,
@@ -274,10 +283,26 @@
 			isa = PBXGroup;
 			children = (
 				2F887A7A215F7FAC00F309C0 /* Scene.swift */,
-				2F1650DD2162044B00C8DBA2 /* SceneCoordinatorType.swift */,
-				2F1650DF2162054500C8DBA2 /* SceneCoordinator.swift */,
+				2FA1994E2163638B002B2883 /* Router.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2FA1994421635F7D002B2883 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2FA1994521635FA0002B2883 /* LoginView.swift */,
+				2FA199472163604A002B2883 /* LoginView+ViewType.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2FA199492163628A002B2883 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2FA1994A21636298002B2883 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		7E7F8BC0F3205B9DA7785F10 /* Pods */ = {
@@ -411,6 +436,7 @@
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
@@ -425,6 +451,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
@@ -490,18 +517,20 @@
 			files = (
 				2F887A71215EAA4F00F309C0 /* Repository.swift in Sources */,
 				2F081B572162B3810021AF7E /* UserView+ViewType.swift in Sources */,
+				2FA199482163604A002B2883 /* LoginView+ViewType.swift in Sources */,
 				2F081B4E216239780021AF7E /* UserViewController.swift in Sources */,
 				2F1650D821612B7A00C8DBA2 /* RepositoryView.swift in Sources */,
-				2F1650E02162054500C8DBA2 /* SceneCoordinator.swift in Sources */,
 				2F081B4A21621DCB0021AF7E /* UserView.swift in Sources */,
+				2FA1994621635FA0002B2883 /* LoginView.swift in Sources */,
+				2FA1994D216362CA002B2883 /* LoginViewModel.swift in Sources */,
 				2F690F77215E7EC700C14815 /* AppDelegate.swift in Sources */,
 				2F887A67215E8C8D00F309C0 /* QueryViewModel.swift in Sources */,
 				2F887A78215F7F2100F309C0 /* BindableType.swift in Sources */,
 				2F887A6D215E908700F309C0 /* ApiController.swift in Sources */,
+				2FA1994F2163638B002B2883 /* Router.swift in Sources */,
 				2F081B4821621B110021AF7E /* QueryResultCellViewModel.swift in Sources */,
 				2F887A65215E879D00F309C0 /* ViewProtocol.swift in Sources */,
 				2F887A76215F791100F309C0 /* QueryResultTableViewCell.swift in Sources */,
-				2F1650DE2162044B00C8DBA2 /* SceneCoordinatorType.swift in Sources */,
 				2F1650D62161295F00C8DBA2 /* RepositoryViewModel.swift in Sources */,
 				2F1650DA216138DA00C8DBA2 /* RepositoryViewController.swift in Sources */,
 				2F690F9D215E85DA00C14815 /* QueryView.swift in Sources */,
@@ -510,6 +539,7 @@
 				2F887A7B215F7FAC00F309C0 /* Scene.swift in Sources */,
 				2F081B552162B2FA0021AF7E /* RepositoryView+ViewType.swift in Sources */,
 				2F081B532162B2A00021AF7E /* QueryView+ViewType.swift in Sources */,
+				2FA1994B21636298002B2883 /* LoginViewController.swift in Sources */,
 				2F081B4C216229140021AF7E /* RepositoryOwner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

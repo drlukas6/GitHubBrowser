@@ -23,16 +23,12 @@ class UserView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        initializeSubviews()
-        addSubviews()
-        setupSubviews()
+        designView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        initializeSubviews()
-        addSubviews()
-        setupSubviews()
+        designView()
     }
 
     func configure(with repositoryOwner: RepositoryOwner) {

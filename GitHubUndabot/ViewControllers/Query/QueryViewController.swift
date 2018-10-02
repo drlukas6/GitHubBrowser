@@ -11,6 +11,7 @@ import SwiftyJSON
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Action
 
 class QueryViewController: UIViewController, BindableType {
     var viewModel: QueryViewModel!
@@ -25,8 +26,9 @@ class QueryViewController: UIViewController, BindableType {
     convenience init(viewModel: QueryViewModel) {
         self.init()
         self.viewModel = viewModel
-        queryView = QueryView(frame: .zero)
+        self.title = "Search Repositories"
         self.disposeBag = DisposeBag()
+        queryView = QueryView(frame: .zero)
     }
     
     override func viewDidLoad() {
@@ -36,13 +38,7 @@ class QueryViewController: UIViewController, BindableType {
         bindViewModel()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
-    }
+
     
     private func initialSetup() {
         self.view.backgroundColor = .white
@@ -136,7 +132,7 @@ class QueryViewController: UIViewController, BindableType {
                         .subscribe(onNext: { _ in
                             cell.viewModel.getOwner()
                         })
-                        .disposed(by: strongSelf.disposeBag)
+                        .disposed(by: cell.disposeBag)
                     
                     cell
                         .viewModel
@@ -148,7 +144,7 @@ class QueryViewController: UIViewController, BindableType {
                             let userScene = Scene.userScene(userViewModel)
                             cell.viewModel.transitionTo(scene: userScene, context: strongSelf)
                         })
-                        .disposed(by: strongSelf.disposeBag)
+                        .disposed(by: cell.disposeBag)
                 }
                 return cell
             },
