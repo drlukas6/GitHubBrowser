@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class LoginView: UIView {
-    var usernameTextField: UITextField!
-    var passwordTextField: UITextField!
     var loginButton: UIButton!
     var gotoSearchButton: UIButton!
     

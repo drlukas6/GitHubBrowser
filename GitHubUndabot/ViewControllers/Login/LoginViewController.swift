@@ -43,6 +43,6 @@ class LoginViewController: UIViewController, BindableType {
     
     func bindViewModel() {
         loginView.gotoSearchButton.rx.action = viewModel.searchAction(from: self)
-        
+        loginView.loginButton.rx.action = viewModel.authorizationAction(from: self)
     }
 }

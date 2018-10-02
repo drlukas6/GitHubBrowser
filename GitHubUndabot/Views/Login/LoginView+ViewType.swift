@@ -12,15 +12,11 @@ import PureLayout
 
 extension LoginView: ViewType {
     func initializeSubviews() {
-        self.usernameTextField = UITextField()
-        self.passwordTextField = UITextField()
         self.loginButton = UIButton(type: .system)
         self.gotoSearchButton = UIButton(type: .system)
     }
     
     func addSubviews() {
-        self.addSubview(usernameTextField)
-        self.addSubview(passwordTextField)
         self.addSubview(loginButton)
         self.addSubview(gotoSearchButton)
     }
@@ -28,29 +24,13 @@ extension LoginView: ViewType {
     func setupSubviews() {
         self.backgroundColor = .white
         
-        usernameTextField.autoAlignAxis(toSuperviewAxis: .vertical)
-        usernameTextField.autoPinEdge(toSuperviewSafeArea: .top,
-                                      withInset: ViewProperty.inset.loginViewStart)
-        usernameTextField.autoSetDimension(.width,
-                                           toSize: ViewProperty.size.textFieldWidth)
-        usernameTextField.placeholder = "username"
-        usernameTextField.borderStyle = .roundedRect
-        
-        passwordTextField.autoAlignAxis(toSuperviewAxis: .vertical)
-        passwordTextField.autoPinEdge(.top,
-                                      to: .bottom,
-                                      of: usernameTextField,
-                                      withOffset: ViewProperty.inset.small)
-        passwordTextField.autoSetDimension(.width,
-                                           toSize: ViewProperty.size.textFieldWidth)
-        passwordTextField.placeholder = "********"
-        passwordTextField.borderStyle = .roundedRect
-        
         loginButton.autoAlignAxis(toSuperviewAxis: .vertical)
-        loginButton.autoPinEdge(.top,
-                                to: .bottom,
-                                of: passwordTextField,
-                                withOffset: ViewProperty.inset.small)
+        loginButton.autoPinEdge(toSuperviewSafeArea: .top,
+                                      withInset: ViewProperty.inset.loginViewStart)
+        loginButton.autoSetDimension(.width, toSize: ViewProperty.size.buttonWidth)
+        loginButton.setTitleColor(.white, for: .normal)
+        loginButton.backgroundColor = ViewProperty.color.undabotBlue
+        loginButton.layer.cornerRadius = ViewProperty.size.defaultCorner
         loginButton.setTitle("Login", for: .normal)
         
         gotoSearchButton.autoAlignAxis(toSuperviewAxis: .vertical)
@@ -58,6 +38,10 @@ extension LoginView: ViewType {
                                 to: .bottom,
                                 of: loginButton,
                                 withOffset: ViewProperty.inset.small)
+        gotoSearchButton.autoSetDimension(.width, toSize: ViewProperty.size.buttonWidth)
+        gotoSearchButton.setTitleColor(.white, for: .normal)
+        gotoSearchButton.backgroundColor = ViewProperty.color.undabotBlue
+        gotoSearchButton.layer.cornerRadius = ViewProperty.size.defaultCorner
         gotoSearchButton.setTitle("Go To Search", for: .normal)
     }
 }

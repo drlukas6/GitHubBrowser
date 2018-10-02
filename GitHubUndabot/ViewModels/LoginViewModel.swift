@@ -9,11 +9,10 @@
 import Foundation
 import RxSwift
 import Action
-import OAuthSwift
+import SafariServices
 
 struct LoginViewModel: Router {
     var RepositoryOwner = PublishSubject<RepositoryOwner>()
-    var oauthswift: OAuthSwift!
     
     func searchAction(from viewController: UIViewController) -> CocoaAction {
         return CocoaAction { _ in
@@ -22,30 +21,15 @@ struct LoginViewModel: Router {
             return Observable.empty()
         }
     }
-    9
-//    mutating func doOAuthGithub(_ serviceParameters: [String:String]){
-//        let oauthswift = OAuth2Swift(
-//            consumerKey:    serviceParameters["consumerKey"]!,
-//            consumerSecret: serviceParameters["consumerSecret"]!,
-//            authorizeUrl:   "https://github.com/login/oauth/authorize",
-//            accessTokenUrl: "https://github.com/login/oauth/access_token",
-//            responseType:   "code"
-//        )
-//        self.oauthswift = oauthswift
-//        oauthswift.authorizeURLHandler = getURLHandler()
-//        let state = generateState(withLength: 20)
-//        let _ = oauthswift.authorize(
-//            withCallbackURL: URL(string: "oauth-swift://oauth-callback/github")!, scope: "user,repo", state: state,
-//            success: { credential, response, parameters in
-//                print(response)
-//                print(credential)
-//                print(parameters)
-////                self.showTokenAlert(name: serviceParameters["name"], credential: credential)
-//            },
-//            failure: { error in
-//                print(error.description)
-//            }
-//        )
-//    }
-//
+    
+    func authorizationAction(from viewController: UIViewController) -> CocoaAction {
+        return CocoaAction { _ in
+            guard let url = ApiController.shared.getAuthorizationUrl() else { return Observable.empty() }
+            let safariViewController = SFSafariViewController(url: url)
+            safariViewController.preferredControlTintColor = .white
+            safariViewController.preferredBarTintColor = ViewProperty.color.undabotBlue
+            viewController.present(safariViewController, animated: true, completion: nil)
+            return Observable.empty()
+        }
+    }
 }

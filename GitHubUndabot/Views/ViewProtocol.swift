@@ -23,7 +23,6 @@ extension ViewType {
     }
 }
 
-
 enum ViewProperty {
     enum inset {
         static let large: CGFloat = 16.0
@@ -45,7 +44,7 @@ enum ViewProperty {
         static let largeFont: CGFloat = 20.0
         static let borderWidth: CGFloat = 2.0
         static let buttonHeight: CGFloat = 40.0
-        static let textFieldWidth: CGFloat = 300.0
+        static let buttonWidth: CGFloat = 300.0
     }
     enum color {
         static let undabotBlue: UIColor = UIColor(red: 0.255, green: 0.596, blue: 0.784, alpha: 1.0)

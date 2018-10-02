@@ -23,9 +23,7 @@ extension Scene {
             let viewController = LoginViewController(viewModel: viewModel)
             let navigationController = UINavigationController(rootViewController: viewController)
             navigationController.navigationBar.tintColor = ViewProperty.color.undabotBlue
-            if #available(iOS 11.0, *) {
-                navigationController.navigationBar.prefersLargeTitles = true
-            }
+            navigationController.navigationBar.prefersLargeTitles = true
             return navigationController
         case .queryScene(let viewModel):
             return QueryViewController(viewModel: viewModel)
