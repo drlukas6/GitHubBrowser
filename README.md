@@ -1,7 +1,7 @@
 
-# GitHubUndabot
+# GitHubBrowser
 
-Application for browsing github repos and users as part of a Undabot employment process!👆
+Application for browsing github repos and users + 0Auth to view your own profile👆
 
 
 ## Features
