@@ -64,12 +64,12 @@
 		2F1650D9216138DA00C8DBA2 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		2F1650DB2162022700C8DBA2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		2F3E3608EADF4819E9C62928 /* Pods-GitHubUndabotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUndabotTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUndabotTests/Pods-GitHubUndabotTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2F690F73215E7EC700C14815 /* GitHubUndabot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUndabot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F690F73215E7EC700C14815 /* GitHubBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F690F76215E7EC700C14815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F690F7D215E7ECB00C14815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F690F80215E7ECB00C14815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F690F82215E7ECB00C14815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2F690F87215E7ECC00C14815 /* GitHubUndabotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUndabotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F690F87215E7ECC00C14815 /* GitHubBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F690F8B215E7ECC00C14815 /* GitHubUndabotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUndabotTests.swift; sourceTree = "<group>"; };
 		2F690F8D215E7ECC00C14815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F690F9C215E85DA00C14815 /* QueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 		2F690F6A215E7EC600C14815 = {
 			isa = PBXGroup;
 			children = (
-				2F690F75215E7EC700C14815 /* GitHubUndabot */,
-				2F690F8A215E7ECC00C14815 /* GitHubUndabotTests */,
+				2F690F75215E7EC700C14815 /* GitHubBrowser */,
+				2F690F8A215E7ECC00C14815 /* GitHubBrowserTests */,
 				2F690F74215E7EC700C14815 /* Products */,
 				7E7F8BC0F3205B9DA7785F10 /* Pods */,
 				A549569B32A350F503D37B1F /* Frameworks */,
@@ -177,13 +177,13 @@
 		2F690F74215E7EC700C14815 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F690F73215E7EC700C14815 /* GitHubUndabot.app */,
-				2F690F87215E7ECC00C14815 /* GitHubUndabotTests.xctest */,
+				2F690F73215E7EC700C14815 /* GitHubBrowser.app */,
+				2F690F87215E7ECC00C14815 /* GitHubBrowserTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2F690F75215E7EC700C14815 /* GitHubUndabot */ = {
+		2F690F75215E7EC700C14815 /* GitHubBrowser */ = {
 			isa = PBXGroup;
 			children = (
 				2F887A79215F7F9900F309C0 /* Scenes */,
@@ -196,16 +196,16 @@
 				2F690F7D215E7ECB00C14815 /* Assets.xcassets */,
 				2F690F82215E7ECB00C14815 /* Info.plist */,
 			);
-			path = GitHubUndabot;
+			path = GitHubBrowser;
 			sourceTree = "<group>";
 		};
-		2F690F8A215E7ECC00C14815 /* GitHubUndabotTests */ = {
+		2F690F8A215E7ECC00C14815 /* GitHubBrowserTests */ = {
 			isa = PBXGroup;
 			children = (
 				2F690F8B215E7ECC00C14815 /* GitHubUndabotTests.swift */,
 				2F690F8D215E7ECC00C14815 /* Info.plist */,
 			);
-			path = GitHubUndabotTests;
+			path = GitHubBrowserTests;
 			sourceTree = "<group>";
 		};
 		2F690F96215E842700C14815 /* SupportingFiles */ = {
@@ -328,9 +328,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2F690F72215E7EC700C14815 /* GitHubUndabot */ = {
+		2F690F72215E7EC700C14815 /* GitHubBrowser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F690F90215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubUndabot" */;
+			buildConfigurationList = 2F690F90215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubBrowser" */;
 			buildPhases = (
 				84CB883DE6408AAEF5C81988 /* [CP] Check Pods Manifest.lock */,
 				2F690F6F215E7EC700C14815 /* Sources */,
@@ -342,14 +342,14 @@
 			);
 			dependencies = (
 			);
-			name = GitHubUndabot;
+			name = GitHubBrowser;
 			productName = GitHubUndabot;
-			productReference = 2F690F73215E7EC700C14815 /* GitHubUndabot.app */;
+			productReference = 2F690F73215E7EC700C14815 /* GitHubBrowser.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2F690F86215E7ECC00C14815 /* GitHubUndabotTests */ = {
+		2F690F86215E7ECC00C14815 /* GitHubBrowserTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F690F93215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubUndabotTests" */;
+			buildConfigurationList = 2F690F93215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubBrowserTests" */;
 			buildPhases = (
 				A228E66259CDE85C80CDB22D /* [CP] Check Pods Manifest.lock */,
 				2F690F83215E7ECC00C14815 /* Sources */,
@@ -361,9 +361,9 @@
 			dependencies = (
 				2F690F89215E7ECC00C14815 /* PBXTargetDependency */,
 			);
-			name = GitHubUndabotTests;
+			name = GitHubBrowserTests;
 			productName = GitHubUndabotTests;
-			productReference = 2F690F87215E7ECC00C14815 /* GitHubUndabotTests.xctest */;
+			productReference = 2F690F87215E7ECC00C14815 /* GitHubBrowserTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -385,7 +385,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2F690F6E215E7EC600C14815 /* Build configuration list for PBXProject "GitHubUndabot" */;
+			buildConfigurationList = 2F690F6E215E7EC600C14815 /* Build configuration list for PBXProject "GitHubBrowser" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -398,8 +398,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F690F72215E7EC700C14815 /* GitHubUndabot */,
-				2F690F86215E7ECC00C14815 /* GitHubUndabotTests */,
+				2F690F72215E7EC700C14815 /* GitHubBrowser */,
+				2F690F86215E7ECC00C14815 /* GitHubBrowserTests */,
 			);
 		};
 /* End PBXProject section */
@@ -557,7 +557,7 @@
 /* Begin PBXTargetDependency section */
 		2F690F89215E7ECC00C14815 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2F690F72215E7EC700C14815 /* GitHubUndabot */;
+			target = 2F690F72215E7EC700C14815 /* GitHubBrowser */;
 			targetProxy = 2F690F88215E7ECC00C14815 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -697,13 +697,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22AZG63582;
-				INFOPLIST_FILE = GitHubUndabot/Info.plist;
+				INFOPLIST_FILE = GitHubBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LukasSestic.GitHubUndabot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LukasSestic.GitHubBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -717,13 +717,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 22AZG63582;
-				INFOPLIST_FILE = GitHubUndabot/Info.plist;
+				INFOPLIST_FILE = GitHubBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LukasSestic.GitHubUndabot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LukasSestic.GitHubBrowser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -748,7 +748,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubUndabot.app/GitHubUndabot";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubBrowser.app/GitHubBrowser";
 			};
 			name = Debug;
 		};
@@ -770,14 +770,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubUndabot.app/GitHubUndabot";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GitHubBrowser.app/GitHubBrowser";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F690F6E215E7EC600C14815 /* Build configuration list for PBXProject "GitHubUndabot" */ = {
+		2F690F6E215E7EC600C14815 /* Build configuration list for PBXProject "GitHubBrowser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F690F8E215E7ECC00C14815 /* Debug */,
@@ -786,7 +786,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F690F90215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubUndabot" */ = {
+		2F690F90215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubBrowser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F690F91215E7ECC00C14815 /* Debug */,
@@ -795,7 +795,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F690F93215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubUndabotTests" */ = {
+		2F690F93215E7ECC00C14815 /* Build configuration list for PBXNativeTarget "GitHubBrowserTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2F690F94215E7ECC00C14815 /* Debug */,

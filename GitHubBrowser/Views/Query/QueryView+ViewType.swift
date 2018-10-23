@@ -29,12 +29,12 @@ extension QueryView: ViewType {
                                                                      bottom: ViewProperty.inset.none,
                                                                      right: ViewProperty.inset.none),
                                                   excludingEdge: .bottom)
-        searchBar.barTintColor = ViewProperty.color.undabotBlue
+        searchBar.barTintColor = ViewProperty.color.seaBlue
         
         sortType.autoPinEdge(.top, to: .bottom, of: searchBar, withOffset: ViewProperty.inset.continous)
         sortType.autoPinEdge(toSuperviewEdge: .leading, withInset: ViewProperty.inset.large)
         sortType.autoPinEdge(toSuperviewEdge: .trailing, withInset: ViewProperty.inset.large)
-        sortType.tintColor = ViewProperty.color.undabotBlue
+        sortType.tintColor = ViewProperty.color.seaBlue
         sortType.selectedSegmentIndex = 0
         
         

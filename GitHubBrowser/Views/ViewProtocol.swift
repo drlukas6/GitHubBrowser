@@ -47,6 +47,6 @@ enum ViewProperty {
         static let buttonWidth: CGFloat = 300.0
     }
     enum color {
-        static let undabotBlue: UIColor = UIColor(red: 0.255, green: 0.596, blue: 0.784, alpha: 1.0)
+        static let seaBlue: UIColor = UIColor(red: 0.255, green: 0.596, blue: 0.784, alpha: 1.0)
     }
 }

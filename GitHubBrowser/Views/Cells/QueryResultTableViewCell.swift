@@ -80,7 +80,7 @@ class QueryResultTableViewCell: UITableViewCell, ViewType {
                                                                       left: ViewProperty.inset.small,
                                                                       bottom: ViewProperty.inset.small,
                                                                       right: ViewProperty.inset.small))
-        containerView.backgroundColor = ViewProperty.color.undabotBlue
+        containerView.backgroundColor = ViewProperty.color.seaBlue
         containerView.layer.cornerRadius = ViewProperty.size.defaultCorner
 
 

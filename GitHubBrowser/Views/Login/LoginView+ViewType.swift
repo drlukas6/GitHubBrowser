@@ -29,7 +29,7 @@ extension LoginView: ViewType {
                                       withInset: ViewProperty.inset.loginViewStart)
         loginButton.autoSetDimension(.width, toSize: ViewProperty.size.buttonWidth)
         loginButton.setTitleColor(.white, for: .normal)
-        loginButton.backgroundColor = ViewProperty.color.undabotBlue
+        loginButton.backgroundColor = ViewProperty.color.seaBlue
         loginButton.layer.cornerRadius = ViewProperty.size.defaultCorner
         loginButton.setTitle("Login", for: .normal)
         
@@ -40,7 +40,7 @@ extension LoginView: ViewType {
                                 withOffset: ViewProperty.inset.small)
         gotoSearchButton.autoSetDimension(.width, toSize: ViewProperty.size.buttonWidth)
         gotoSearchButton.setTitleColor(.white, for: .normal)
-        gotoSearchButton.backgroundColor = ViewProperty.color.undabotBlue
+        gotoSearchButton.backgroundColor = ViewProperty.color.seaBlue
         gotoSearchButton.layer.cornerRadius = ViewProperty.size.defaultCorner
         gotoSearchButton.setTitle("Go To Search", for: .normal)
     }

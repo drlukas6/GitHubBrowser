@@ -26,7 +26,7 @@ struct RepositoryViewModel: Router {
         return CocoaAction { _ in
             let safariViewController = SFSafariViewController(url: self.repository.repoURL)
             safariViewController.preferredControlTintColor = .white
-            safariViewController.preferredBarTintColor = ViewProperty.color.undabotBlue
+            safariViewController.preferredBarTintColor = ViewProperty.color.seaBlue
             viewController.present(safariViewController, animated: true, completion: nil)
             return Observable.empty()
         }

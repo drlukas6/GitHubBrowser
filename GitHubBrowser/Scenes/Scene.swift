@@ -22,7 +22,7 @@ extension Scene {
         case .loginScene(let viewModel):
             let viewController = LoginViewController(viewModel: viewModel)
             let navigationController = UINavigationController(rootViewController: viewController)
-            navigationController.navigationBar.tintColor = ViewProperty.color.undabotBlue
+            navigationController.navigationBar.tintColor = ViewProperty.color.seaBlue
             navigationController.navigationBar.prefersLargeTitles = true
             return navigationController
         case .queryScene(let viewModel):

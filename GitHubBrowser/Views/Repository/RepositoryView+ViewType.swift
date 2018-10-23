@@ -58,13 +58,13 @@ extension RepositoryView: ViewType {
         
         repoDescription.lineBreakMode = .byWordWrapping
         repoDescription.numberOfLines = 0
-        repoDescription.textColor = ViewProperty.color.undabotBlue
+        repoDescription.textColor = ViewProperty.color.seaBlue
         
         authorView.clipsToBounds = true
         authorView.layer.cornerRadius = ViewProperty.size.defaultCorner
         authorView.layer.borderWidth = ViewProperty.size.borderWidth
         authorView.layer.borderColor = UIColor.white.cgColor
-        authorView.backgroundColor = ViewProperty.color.undabotBlue
+        authorView.backgroundColor = ViewProperty.color.seaBlue
         authorView.autoPinEdge(.top, to: .bottom, of: repoDescription, withOffset: ViewProperty.inset.small)
         authorView.autoPinEdge(toSuperviewEdge: .leading, withInset: ViewProperty.inset.small)
         authorView.autoPinEdge(toSuperviewEdge: .trailing, withInset: ViewProperty.inset.small)
@@ -111,31 +111,31 @@ extension RepositoryView: ViewType {
         statisticsStackView.spacing = ViewProperty.size.defaultStackViewSpacing
         
         language.font = UIFont.boldSystemFont(ofSize: ViewProperty.size.largeFont)
-        language.textColor = ViewProperty.color.undabotBlue
+        language.textColor = ViewProperty.color.seaBlue
         
         noIssues.font = UIFont.boldSystemFont(ofSize: ViewProperty.size.largeFont)
-        noIssues.textColor = ViewProperty.color.undabotBlue
+        noIssues.textColor = ViewProperty.color.seaBlue
         
         noWatchers.font = UIFont.boldSystemFont(ofSize: ViewProperty.size.largeFont)
-        noWatchers.textColor = ViewProperty.color.undabotBlue
+        noWatchers.textColor = ViewProperty.color.seaBlue
         
         noForks.font = UIFont.boldSystemFont(ofSize: ViewProperty.size.largeFont)
-        noForks.textColor = ViewProperty.color.undabotBlue
+        noForks.textColor = ViewProperty.color.seaBlue
         
         updated.font = UIFont.boldSystemFont(ofSize: ViewProperty.size.largeFont)
-        updated.textColor = ViewProperty.color.undabotBlue
+        updated.textColor = ViewProperty.color.seaBlue
         
         created.font = UIFont.boldSystemFont(ofSize: ViewProperty.size.largeFont)
-        created.textColor = ViewProperty.color.undabotBlue
+        created.textColor = ViewProperty.color.seaBlue
         
         license.font = UIFont.boldSystemFont(ofSize: ViewProperty.size.largeFont)
-        license.textColor = ViewProperty.color.undabotBlue
+        license.textColor = ViewProperty.color.seaBlue
         license.lineBreakMode = .byWordWrapping
         license.numberOfLines = 0
         
         viewOnWeb.setTitle("VIEW ON WEB", for: .normal)
         viewOnWeb.setTitleColor(.white, for: .normal)
-        viewOnWeb.backgroundColor = ViewProperty.color.undabotBlue
+        viewOnWeb.backgroundColor = ViewProperty.color.seaBlue
         viewOnWeb.layer.cornerRadius = ViewProperty.size.defaultCorner
         viewOnWeb.autoPinEdgesToSuperviewSafeArea(with: UIEdgeInsets(top: ViewProperty.inset.small,
                                                                      left: ViewProperty.inset.small,

@@ -18,7 +18,7 @@ struct UserViewModel {
         return CocoaAction { _ in
             let safariViewController = SFSafariViewController(url: self.repositoryOwner.ownerUrl)
             safariViewController.preferredControlTintColor = .white
-            safariViewController.preferredBarTintColor = ViewProperty.color.undabotBlue
+            safariViewController.preferredBarTintColor = ViewProperty.color.seaBlue
             viewController.present(safariViewController, animated: true, completion: nil)
             return Observable.empty()
         }

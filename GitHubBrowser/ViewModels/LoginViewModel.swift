@@ -27,7 +27,7 @@ struct LoginViewModel: Router {
             guard let url = ApiController.shared.getAuthorizationUrl() else { return Observable.empty() }
             let safariViewController = SFSafariViewController(url: url)
             safariViewController.preferredControlTintColor = .white
-            safariViewController.preferredBarTintColor = ViewProperty.color.undabotBlue
+            safariViewController.preferredBarTintColor = ViewProperty.color.seaBlue
             viewController.present(safariViewController, animated: true, completion: nil)
             return Observable.empty()
         }

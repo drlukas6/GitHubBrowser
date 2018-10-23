@@ -43,7 +43,7 @@ extension UserView: ViewType {
         avatarImage.autoPinEdge(toSuperviewSafeArea: .top, withInset: ViewProperty.inset.small)
         avatarImage.autoSetDimensions(to: ViewProperty.size.largeImage)
         avatarImage.clipsToBounds = true
-        avatarImage.layer.borderColor = ViewProperty.color.undabotBlue.cgColor
+        avatarImage.layer.borderColor = ViewProperty.color.seaBlue.cgColor
         avatarImage.layer.borderWidth = ViewProperty.size.borderWidth
         avatarImage.layer.cornerRadius = ViewProperty.size.largeImageCorner
         
@@ -69,7 +69,7 @@ extension UserView: ViewType {
         
         viewOnWeb.setTitle("VIEW ON WEB", for: .normal)
         viewOnWeb.setTitleColor(.white, for: .normal)
-        viewOnWeb.backgroundColor = ViewProperty.color.undabotBlue
+        viewOnWeb.backgroundColor = ViewProperty.color.seaBlue
         viewOnWeb.layer.cornerRadius = ViewProperty.size.defaultCorner
         viewOnWeb.autoPinEdgesToSuperviewSafeArea(with: UIEdgeInsets(top: ViewProperty.inset.small,
                                                                      left: ViewProperty.inset.small,
